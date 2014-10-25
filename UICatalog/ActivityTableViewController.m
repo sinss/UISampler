@@ -7,10 +7,14 @@
 //
 
 #import "ActivityTableViewController.h"
+#import "CustomSearchBar.h"
+#import "CustomCell.h"
 
 #define cellIdentifier @"cellidentifier"
 
-@interface ActivityTableViewController ()
+@interface ActivityTableViewController () <UISearchBarDelegate>
+
+@property (nonatomic, strong) CustomSearchBar *searchBar;
 
 @end
 
@@ -20,16 +24,60 @@
 {
     [super loadView];
     NSLog(@"loadView");
-    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.tableView registerNib:[UINib nibWithNibName:@"CustomCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cellIdentifier];
+    
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    /*
+     Create UIBarButton in UINavitaionBar
+     */
+    [self createNnavigationBar];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)createNnavigationBar
+{
+    //建立一個UIButton
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setFrame:CGRectMake(0, 0, 40, 40)];
+    //設定按鈕被選中時出現的樣式
+    [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
+    
+    [btn setTitle:@"AA" forState:UIControlStateNormal];
+    [btn setTitle:@"HH" forState:UIControlStateHighlighted];
+    //UIButton 是一個　UIView 的　subclass
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    //建立一個Action Item
+    UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(done:)];
+    
+    self.navigationItem.leftBarButtonItems = @[item, done];
+}
+
+- (void)done:(id)sender
+{
+    NSLog(@"done!!!");
+}
+
+- (IBAction)searchItemPress:(id)sender
+{
+    if (self.searchBar.isShowing)
+    {
+        [self.searchBar dismiss];
+    }
+    else
+    {
+        [self.searchBar showInView:self.view];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,18 +99,16 @@
     return 10;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 300.0f;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    CustomCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    if (!cell)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
-    }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"title + %li", (long)indexPath.row];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"detail + %li", (long)indexPath.row];
     
     return cell;
 }
@@ -111,5 +157,53 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (self.searchBar.isShowing)
+    {
+        [self.searchBar dismiss];
+    }
+    
+}
+
+#pragma mark - UISearchBarDelegate
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    NSLog(@"Cancel!!");
+    if (self.searchBar.isShowing)
+    {
+        [self.searchBar dismiss];
+    }
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    NSLog(@"Search!!");
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    NSLog(@"text change");
+}
+
+- (BOOL)searchBar:(UISearchBar *)searchBar shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    
+    return YES;
+}
+
+#pragma mark - Accessors
+- (CustomSearchBar*)searchBar
+{
+    //lazy loader suggested from Apple
+    if (!_searchBar)
+    {
+        _searchBar = [[[NSBundle mainBundle] loadNibNamed:@"CustomSearchBar" owner:self options:nil] objectAtIndex:0];
+        _searchBar.frame = CGRectMake(0, -kSearchBarHeight, self.view.frame.size.width, kSearchBarHeight);
+        _searchBar.searchBar.delegate = self;
+    }
+    return _searchBar;
+}
 
 @end

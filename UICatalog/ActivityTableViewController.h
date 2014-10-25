@@ -10,4 +10,6 @@
 
 @interface ActivityTableViewController : UITableViewController
 
+- (IBAction)searchItemPress:(id)sender;
+
 @end
