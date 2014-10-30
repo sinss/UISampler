@@ -15,6 +15,7 @@
 @interface ActivityTableViewController () <UISearchBarDelegate>
 
 @property (nonatomic, strong) CustomSearchBar *searchBar;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -37,6 +38,7 @@
      Create UIBarButton in UINavitaionBar
      */
     [self createNnavigationBar];
+    [self createRefreshControl];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -61,6 +63,20 @@
     UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(done:)];
     
     self.navigationItem.leftBarButtonItems = @[item, done];
+}
+
+- (void)createRefreshControl
+{
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = [UIColor purpleColor];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)refresh:(id)sender
+{
+    NSLog(@"refresh!!");
+    [self.refreshControl performSelector:@selector(endRefreshing) withObject:nil afterDelay:3];
 }
 
 - (void)done:(id)sender
@@ -108,7 +124,7 @@
 {
     CustomCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }
