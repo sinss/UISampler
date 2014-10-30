@@ -11,6 +11,9 @@
 		0FDFDE0219FB8391004AE6E1 /* CustomSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDFDE0119FB8391004AE6E1 /* CustomSearchBar.m */; };
 		0FDFDE0619FB9556004AE6E1 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDFDE0519FB9556004AE6E1 /* CustomCell.m */; };
 		0FDFDE0819FB9571004AE6E1 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FDFDE0719FB9571004AE6E1 /* CustomCell.xib */; };
+		B305B1061A0286C600F21F95 /* NonARCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B305B1041A0286C600F21F95 /* NonARCViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B305B1071A0286C600F21F95 /* NonARCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B305B1051A0286C600F21F95 /* NonARCViewController.xib */; };
+		B305B10A1A028A6500F21F95 /* singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = B305B1091A028A6500F21F95 /* singleton.m */; };
 		B35AB34819FA970B0063034C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B35AB34719FA970B0063034C /* main.m */; };
 		B35AB34B19FA970B0063034C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B35AB34A19FA970B0063034C /* AppDelegate.m */; };
 		B35AB34E19FA970B0063034C /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B35AB34D19FA970B0063034C /* FirstViewController.m */; };
@@ -39,6 +42,11 @@
 		0FDFDE0419FB9556004AE6E1 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		0FDFDE0519FB9556004AE6E1 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		0FDFDE0719FB9571004AE6E1 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		B305B1031A0286C600F21F95 /* NonARCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonARCViewController.h; sourceTree = "<group>"; };
+		B305B1041A0286C600F21F95 /* NonARCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonARCViewController.m; sourceTree = "<group>"; };
+		B305B1051A0286C600F21F95 /* NonARCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NonARCViewController.xib; sourceTree = "<group>"; };
+		B305B1081A028A6500F21F95 /* singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = singleton.h; sourceTree = "<group>"; };
+		B305B1091A028A6500F21F95 /* singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = singleton.m; sourceTree = "<group>"; };
 		B35AB34219FA970B0063034C /* UICatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UICatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B35AB34619FA970B0063034C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B35AB34719FA970B0063034C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -96,6 +104,18 @@
 			name = "Custom Cells";
 			sourceTree = "<group>";
 		};
+		B305B1021A02869A00F21F95 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B305B1031A0286C600F21F95 /* NonARCViewController.h */,
+				B305B1041A0286C600F21F95 /* NonARCViewController.m */,
+				B305B1051A0286C600F21F95 /* NonARCViewController.xib */,
+				B305B1081A028A6500F21F95 /* singleton.h */,
+				B305B1091A028A6500F21F95 /* singleton.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		B35AB33919FA970B0063034C = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +137,7 @@
 		B35AB34419FA970B0063034C /* UICatalog */ = {
 			isa = PBXGroup;
 			children = (
+				B305B1021A02869A00F21F95 /* Classes */,
 				0FDFDE0319FB94C1004AE6E1 /* Custom Cells */,
 				0FDFDDFD19FB8075004AE6E1 /* Custom Views */,
 				B35AB36E19FA9BC90063034C /* Activity */,
@@ -250,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FDFDE0819FB9571004AE6E1 /* CustomCell.xib in Resources */,
+				B305B1071A0286C600F21F95 /* NonARCViewController.xib in Resources */,
 				B35AB35419FA970B0063034C /* Main.storyboard in Resources */,
 				B35AB35919FA970B0063034C /* LaunchScreen.xib in Resources */,
 				0FDFDDFF19FB80C0004AE6E1 /* CustomSearchBar.xib in Resources */,
@@ -272,10 +294,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B35AB35119FA970B0063034C /* SecondViewController.m in Sources */,
+				B305B1061A0286C600F21F95 /* NonARCViewController.m in Sources */,
 				B35AB34B19FA970B0063034C /* AppDelegate.m in Sources */,
 				B35AB37119FA9C020063034C /* ActivityTableViewController.m in Sources */,
 				B35AB34E19FA970B0063034C /* FirstViewController.m in Sources */,
 				0FDFDE0619FB9556004AE6E1 /* CustomCell.m in Sources */,
+				B305B10A1A028A6500F21F95 /* singleton.m in Sources */,
 				0FDFDE0219FB8391004AE6E1 /* CustomSearchBar.m in Sources */,
 				B35AB34819FA970B0063034C /* main.m in Sources */,
 			);

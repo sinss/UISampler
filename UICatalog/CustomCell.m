@@ -33,6 +33,7 @@
     
     self.actionC.layer.cornerRadius = 30;
     [self.actionC setClipsToBounds:YES];
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
