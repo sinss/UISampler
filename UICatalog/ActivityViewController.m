@@ -12,11 +12,12 @@
 #import "CustomCell.h"
 #import "customHeaderView.h"
 
-@interface ActivityViewController () <UIScrollViewDelegate>
+@interface ActivityViewController () <UIScrollViewDelegate, ActivityScrollDelegate>
 
 @property (nonatomic, strong) ActivityTableSource *tableSource;
 @property (nonatomic, strong) CustomSearchBar *searchBar;
 @property (nonatomic, strong) customHeaderView *tableviewHeader;
+
 @end
 
 @implementation ActivityViewController
@@ -35,18 +36,16 @@
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+#warning 使用一個Delegate包裝ScrollView的callback methods
     self.tableSource = [[ActivityTableSource alloc] init];
+    self.tableSource.delegate = self;
     
     self.tableView.delegate = _tableSource;
     self.tableView.dataSource = _tableSource;
 
     [self.tableView reloadData];
-    // Do any additional setup after loading the view.
     
     self.tableView.tableHeaderView = self.tableviewHeader;
-    CGRect frame = self.tableviewHeader.frame;
-    frame.size.height = 30;
-    self.tableviewHeader.frame = frame;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,6 +70,11 @@
     UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(done:)];
     
     self.navigationItem.leftBarButtonItems = @[item, done];
+}
+
+- (void)done:(id)sender
+{
+    NSLog(@"done!!");
 }
 
 - (IBAction)searchItemPress:(id)sender
@@ -115,6 +119,15 @@
     return _searchBar;
 }
 
+#pragma mark - ActivityTableSourceDelegate
+- (void)ActivityCcrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (self.searchBar.isShowing)
+    {
+        [self.searchBar dismiss];
+    }
+}
+
 - (customHeaderView*)tableviewHeader
 {
     //define a block
@@ -126,7 +139,7 @@
     if (!_tableviewHeader)
     {
         _tableviewHeader = [[[NSBundle mainBundle] loadNibNamed:@"customHeaderView" owner:self options:nil] objectAtIndex:0];
-        _tableviewHeader.frame = CGRectMake(0, 0, self.view.frame.size.width, 44);
+        _tableviewHeader.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 30);
         [_tableviewHeader setBlock:ActionOptionBlock];
     }
     return _tableviewHeader;

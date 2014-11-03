@@ -9,6 +9,10 @@
 #import "ActivityTableSource.h"
 #import "CustomCell.h"
 
+@interface ActivityTableSource ()
+
+@end
+
 @implementation ActivityTableSource
 
 #pragma mark - Table view data source
@@ -30,6 +34,16 @@
     return 300.0f;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 1;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CustomCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
@@ -39,6 +53,14 @@
     return cell;
 }
 
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+#warning 判斷是否可呼叫，@optional來呼叫
+    if ([self.delegate respondsToSelector:@selector(ActivityCcrollViewDidEndDragging:willDecelerate:)])
+    {
+        [self.delegate ActivityCcrollViewDidEndDragging:scrollView willDecelerate:decelerate];
+    }
+}
 
 /*
  // Override to support conditional editing of the table view.
@@ -73,6 +95,5 @@
  return YES;
  }
  */
-
 
 @end

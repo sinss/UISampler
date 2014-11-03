@@ -16,7 +16,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sgi-HF-VxZ">
                         <rect key="frame" x="15" y="17" width="296" height="286"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYx-xW-IKP">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYx-xW-IKP">
                                 <rect key="frame" x="247" y="0.0" width="41" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="41" id="wxZ-l4-igs"/>
@@ -118,7 +118,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egP-f8-Vuj">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egP-f8-Vuj">
                                         <rect key="frame" x="0.0" y="3" width="41" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="41" id="3cS-Zi-qO2"/>

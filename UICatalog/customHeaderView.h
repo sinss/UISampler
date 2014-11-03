@@ -26,6 +26,12 @@ typedef void (^ActionOptionBlock) (ActionOptions option);
 
 - (IBAction)ActionButtonPress:(id)sender;
 
+/*
+ Show / Dismiss
+ */
+- (void)showInView:(UIView*)view offset:(CGPoint)offset;
+- (void)dismiss;
+
 @end
 
 @protocol customHeaderViewAction <NSObject>
