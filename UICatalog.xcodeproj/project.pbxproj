@@ -11,6 +11,10 @@
 		0FDFDE0219FB8391004AE6E1 /* CustomSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDFDE0119FB8391004AE6E1 /* CustomSearchBar.m */; };
 		0FDFDE0619FB9556004AE6E1 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDFDE0519FB9556004AE6E1 /* CustomCell.m */; };
 		0FDFDE0819FB9571004AE6E1 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FDFDE0719FB9571004AE6E1 /* CustomCell.xib */; };
+		0FF693B41A04B6320028E02F /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF693B31A04B6320028E02F /* ActivityViewController.m */; };
+		0FF693B71A04B6C00028E02F /* ActivityTableSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF693B61A04B6C00028E02F /* ActivityTableSource.m */; };
+		0FF693BA1A04C1140028E02F /* customHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF693B91A04C1140028E02F /* customHeaderView.m */; };
+		0FF693BC1A04C17E0028E02F /* customHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FF693BB1A04C17E0028E02F /* customHeaderView.xib */; };
 		B305B1061A0286C600F21F95 /* NonARCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B305B1041A0286C600F21F95 /* NonARCViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B305B1071A0286C600F21F95 /* NonARCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B305B1051A0286C600F21F95 /* NonARCViewController.xib */; };
 		B305B10A1A028A6500F21F95 /* singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = B305B1091A028A6500F21F95 /* singleton.m */; };
@@ -42,6 +46,13 @@
 		0FDFDE0419FB9556004AE6E1 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		0FDFDE0519FB9556004AE6E1 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		0FDFDE0719FB9571004AE6E1 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		0FF693B21A04B6320028E02F /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
+		0FF693B31A04B6320028E02F /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
+		0FF693B51A04B6C00028E02F /* ActivityTableSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityTableSource.h; sourceTree = "<group>"; };
+		0FF693B61A04B6C00028E02F /* ActivityTableSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityTableSource.m; sourceTree = "<group>"; };
+		0FF693B81A04C1140028E02F /* customHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = customHeaderView.h; sourceTree = "<group>"; };
+		0FF693B91A04C1140028E02F /* customHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customHeaderView.m; sourceTree = "<group>"; };
+		0FF693BB1A04C17E0028E02F /* customHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = customHeaderView.xib; sourceTree = "<group>"; };
 		B305B1031A0286C600F21F95 /* NonARCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonARCViewController.h; sourceTree = "<group>"; };
 		B305B1041A0286C600F21F95 /* NonARCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonARCViewController.m; sourceTree = "<group>"; };
 		B305B1051A0286C600F21F95 /* NonARCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NonARCViewController.xib; sourceTree = "<group>"; };
@@ -90,6 +101,9 @@
 				0FDFDE0019FB8391004AE6E1 /* CustomSearchBar.h */,
 				0FDFDE0119FB8391004AE6E1 /* CustomSearchBar.m */,
 				0FDFDDFE19FB80C0004AE6E1 /* CustomSearchBar.xib */,
+				0FF693B81A04C1140028E02F /* customHeaderView.h */,
+				0FF693B91A04C1140028E02F /* customHeaderView.m */,
+				0FF693BB1A04C17E0028E02F /* customHeaderView.xib */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -112,6 +126,8 @@
 				B305B1051A0286C600F21F95 /* NonARCViewController.xib */,
 				B305B1081A028A6500F21F95 /* singleton.h */,
 				B305B1091A028A6500F21F95 /* singleton.m */,
+				0FF693B51A04B6C00028E02F /* ActivityTableSource.h */,
+				0FF693B61A04B6C00028E02F /* ActivityTableSource.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -186,6 +202,8 @@
 			children = (
 				B35AB36F19FA9C020063034C /* ActivityTableViewController.h */,
 				B35AB37019FA9C020063034C /* ActivityTableViewController.m */,
+				0FF693B21A04B6320028E02F /* ActivityViewController.h */,
+				0FF693B31A04B6320028E02F /* ActivityViewController.m */,
 			);
 			name = Activity;
 			sourceTree = "<group>";
@@ -270,6 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FF693BC1A04C17E0028E02F /* customHeaderView.xib in Resources */,
 				0FDFDE0819FB9571004AE6E1 /* CustomCell.xib in Resources */,
 				B305B1071A0286C600F21F95 /* NonARCViewController.xib in Resources */,
 				B35AB35419FA970B0063034C /* Main.storyboard in Resources */,
@@ -293,15 +312,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FF693BA1A04C1140028E02F /* customHeaderView.m in Sources */,
 				B35AB35119FA970B0063034C /* SecondViewController.m in Sources */,
 				B305B1061A0286C600F21F95 /* NonARCViewController.m in Sources */,
 				B35AB34B19FA970B0063034C /* AppDelegate.m in Sources */,
 				B35AB37119FA9C020063034C /* ActivityTableViewController.m in Sources */,
 				B35AB34E19FA970B0063034C /* FirstViewController.m in Sources */,
+				0FF693B71A04B6C00028E02F /* ActivityTableSource.m in Sources */,
 				0FDFDE0619FB9556004AE6E1 /* CustomCell.m in Sources */,
 				B305B10A1A028A6500F21F95 /* singleton.m in Sources */,
 				0FDFDE0219FB8391004AE6E1 /* CustomSearchBar.m in Sources */,
 				B35AB34819FA970B0063034C /* main.m in Sources */,
+				0FF693B41A04B6320028E02F /* ActivityViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

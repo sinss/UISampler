@@ -14,8 +14,15 @@
 
 @implementation NonARCViewController
 
+@synthesize message = _message;
+@synthesize button = _button, label = _label;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.message = [[NSString alloc] initWithFormat:@"11"];
+    
+    //[_message retain];
+    //refrence count + 1
     // Do any additional setup after loading the view from its nib.
 }
 

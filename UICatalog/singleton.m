@@ -18,6 +18,7 @@
     dispatch_once(&onceToken, ^{
         singletonInstance = [[singleton alloc] init];
     });
+    
     return singletonInstance;
 }
 

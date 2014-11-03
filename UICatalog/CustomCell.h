@@ -18,6 +18,8 @@ typedef NS_ENUM(NSInteger, customCellAction)
     actionC,
 };
 
+#define cellIdentifier @"cellidentifier"
+
 @protocol CustomCellDelegate;
 @interface CustomCell : UITableViewCell
 
@@ -38,6 +40,8 @@ typedef NS_ENUM(NSInteger, customCellAction)
 @property (nonatomic, strong) IBOutlet UIButton *actionA;
 @property (nonatomic, strong) IBOutlet UIButton *actionB;
 @property (nonatomic, strong) IBOutlet UIButton *actionC;
+
+@property (nonatomic, weak) id <CustomCellDelegate> delegate;
 
 @end
 

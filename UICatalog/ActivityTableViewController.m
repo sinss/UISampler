@@ -10,9 +10,7 @@
 #import "CustomSearchBar.h"
 #import "CustomCell.h"
 
-#define cellIdentifier @"cellidentifier"
-
-@interface ActivityTableViewController () <UISearchBarDelegate>
+@interface ActivityTableViewController () <UISearchBarDelegate, CustomCellDelegate>
 
 @property (nonatomic, strong) CustomSearchBar *searchBar;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
@@ -68,7 +66,7 @@
 - (void)createRefreshControl
 {
     self.refreshControl = [[UIRefreshControl alloc] init];
-    self.refreshControl.backgroundColor = [UIColor purpleColor];
+    self.refreshControl.backgroundColor = [UIColor lightGrayColor];
     self.refreshControl.tintColor = [UIColor whiteColor];
     [self.refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
 }
@@ -92,7 +90,7 @@
     }
     else
     {
-        [self.searchBar showInView:self.view];
+        [self.searchBar showInView:self.tableView offset:self.tableView.contentOffset];
     }
 }
 
@@ -176,11 +174,15 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
     if (self.searchBar.isShowing)
     {
         [self.searchBar dismiss];
     }
-    
 }
 
 #pragma mark - UISearchBarDelegate

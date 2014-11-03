@@ -15,7 +15,7 @@
 @property (nonatomic, strong) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, assign) BOOL isShowing;
 
-- (void)showInView:(UIView*)view;
+- (void)showInView:(UIView*)view offset:(CGPoint)offset;
 - (void)dismiss;
 
 @end

@@ -18,7 +18,7 @@
 }
 */
 
-- (void)showInView:(UIView *)view
+- (void)showInView:(UIView *)view offset:(CGPoint)offset
 {
     CGRect frame = self.frame;
     frame.origin.y = -kSearchBarHeight;
@@ -26,7 +26,7 @@
     [view addSubview:self];
     [UIView animateWithDuration:0.3 animations:^{
         //動畫效果
-        self.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+        self.frame = CGRectMake(0, 64, self.frame.size.width, self.frame.size.height);
     } completion:^(BOOL finish) {
         //動畫完成
         if (finish)
@@ -42,7 +42,7 @@
 {
     [UIView animateWithDuration:0.3 animations:^{
         //動畫效果
-        self.frame = CGRectMake(0, -kSearchBarHeight, self.frame.size.width, self.frame.size.height);
+        self.frame = CGRectMake(0, -kSearchBarHeight + 64, self.frame.size.width, self.frame.size.height);
     } completion:^(BOOL finish) {
         //動畫完成
         if (finish)
