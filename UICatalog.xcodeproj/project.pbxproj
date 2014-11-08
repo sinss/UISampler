@@ -28,6 +28,25 @@
 		B35AB35919FA970B0063034C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B35AB35719FA970B0063034C /* LaunchScreen.xib */; };
 		B35AB36519FA970B0063034C /* UICatalogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B35AB36419FA970B0063034C /* UICatalogTests.m */; };
 		B35AB37119FA9C020063034C /* ActivityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B35AB37019FA9C020063034C /* ActivityTableViewController.m */; };
+		B3DE83FC1A0DC17C006A0857 /* XHBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DE83DE1A0DC17C006A0857 /* XHBaseTableViewController.m */; };
+		B3DE83FD1A0DC17C006A0857 /* XHFoundationCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DE83E01A0DC17C006A0857 /* XHFoundationCommon.m */; };
+		B3DE83FE1A0DC17C006A0857 /* XHPullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DE83E21A0DC17C006A0857 /* XHPullRefreshTableViewController.m */; };
+		B3DE83FF1A0DC17C006A0857 /* XHSystemCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DE83E51A0DC17C006A0857 /* XHSystemCollectionViewController.m */; };
+		B3DE84001A0DC17C006A0857 /* XHSystemRefreshCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DE83E71A0DC17C006A0857 /* XHSystemRefreshCollectionViewController.m */; };
+		B3DE84011A0DC17C006A0857 /* XHSysatemRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DE83EA1A0DC17C006A0857 /* XHSysatemRefreshTableViewController.m */; };
+		B3DE84021A0DC17C006A0857 /* XHSystemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DE83EC1A0DC17C006A0857 /* XHSystemTableViewController.m */; };
+		B3DE84031A0DC17C006A0857 /* XHRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DE83EF1A0DC17C006A0857 /* XHRefreshControl.m */; };
+		B3DE84041A0DC17C006A0857 /* XHActivityCircleIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DE83F31A0DC17C006A0857 /* XHActivityCircleIndicatorView.m */; };
+		B3DE84051A0DC17C006A0857 /* XHCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DE83F51A0DC17C006A0857 /* XHCircleView.m */; };
+		B3DE84061A0DC17C006A0857 /* XHLoadMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DE83F71A0DC17C006A0857 /* XHLoadMoreView.m */; };
+		B3DE84071A0DC17C006A0857 /* XHRefreshActivityIndicatorContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DE83F91A0DC17C006A0857 /* XHRefreshActivityIndicatorContainerView.m */; };
+		B3DE84081A0DC17C006A0857 /* XHRefreshCircleContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DE83FB1A0DC17C006A0857 /* XHRefreshCircleContainerView.m */; };
+		B3DE84101A0DC224006A0857 /* XHSegueItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DE840B1A0DC224006A0857 /* XHSegueItem.m */; };
+		B3DE84111A0DC224006A0857 /* NSDate+TimeAgo.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DE840E1A0DC224006A0857 /* NSDate+TimeAgo.m */; };
+		B3DE84121A0DC224006A0857 /* NSDateTimeAgo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B3DE840F1A0DC224006A0857 /* NSDateTimeAgo.bundle */; };
+		B3DE84141A0DC249006A0857 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DE84131A0DC249006A0857 /* CoreGraphics.framework */; };
+		B3DE84161A0DC251006A0857 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DE84151A0DC251006A0857 /* UIKit.framework */; };
+		B3DE84181A0DC257006A0857 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DE84171A0DC257006A0857 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +97,41 @@
 		B35AB36419FA970B0063034C /* UICatalogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UICatalogTests.m; sourceTree = "<group>"; };
 		B35AB36F19FA9C020063034C /* ActivityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityTableViewController.h; sourceTree = "<group>"; };
 		B35AB37019FA9C020063034C /* ActivityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityTableViewController.m; sourceTree = "<group>"; };
+		B3DE83DD1A0DC17C006A0857 /* XHBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHBaseTableViewController.h; sourceTree = "<group>"; };
+		B3DE83DE1A0DC17C006A0857 /* XHBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHBaseTableViewController.m; sourceTree = "<group>"; };
+		B3DE83DF1A0DC17C006A0857 /* XHFoundationCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHFoundationCommon.h; sourceTree = "<group>"; };
+		B3DE83E01A0DC17C006A0857 /* XHFoundationCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHFoundationCommon.m; sourceTree = "<group>"; };
+		B3DE83E11A0DC17C006A0857 /* XHPullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHPullRefreshTableViewController.h; sourceTree = "<group>"; };
+		B3DE83E21A0DC17C006A0857 /* XHPullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHPullRefreshTableViewController.m; sourceTree = "<group>"; };
+		B3DE83E41A0DC17C006A0857 /* XHSystemCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSystemCollectionViewController.h; sourceTree = "<group>"; };
+		B3DE83E51A0DC17C006A0857 /* XHSystemCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSystemCollectionViewController.m; sourceTree = "<group>"; };
+		B3DE83E61A0DC17C006A0857 /* XHSystemRefreshCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSystemRefreshCollectionViewController.h; sourceTree = "<group>"; };
+		B3DE83E71A0DC17C006A0857 /* XHSystemRefreshCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSystemRefreshCollectionViewController.m; sourceTree = "<group>"; };
+		B3DE83E91A0DC17C006A0857 /* XHSysatemRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSysatemRefreshTableViewController.h; sourceTree = "<group>"; };
+		B3DE83EA1A0DC17C006A0857 /* XHSysatemRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSysatemRefreshTableViewController.m; sourceTree = "<group>"; };
+		B3DE83EB1A0DC17C006A0857 /* XHSystemTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSystemTableViewController.h; sourceTree = "<group>"; };
+		B3DE83EC1A0DC17C006A0857 /* XHSystemTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSystemTableViewController.m; sourceTree = "<group>"; };
+		B3DE83EE1A0DC17C006A0857 /* XHRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHRefreshControl.h; sourceTree = "<group>"; };
+		B3DE83EF1A0DC17C006A0857 /* XHRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHRefreshControl.m; sourceTree = "<group>"; };
+		B3DE83F01A0DC17C006A0857 /* XHRefreshControlHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHRefreshControlHeader.h; sourceTree = "<group>"; };
+		B3DE83F21A0DC17C006A0857 /* XHActivityCircleIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHActivityCircleIndicatorView.h; sourceTree = "<group>"; };
+		B3DE83F31A0DC17C006A0857 /* XHActivityCircleIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHActivityCircleIndicatorView.m; sourceTree = "<group>"; };
+		B3DE83F41A0DC17C006A0857 /* XHCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHCircleView.h; sourceTree = "<group>"; };
+		B3DE83F51A0DC17C006A0857 /* XHCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHCircleView.m; sourceTree = "<group>"; };
+		B3DE83F61A0DC17C006A0857 /* XHLoadMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLoadMoreView.h; sourceTree = "<group>"; };
+		B3DE83F71A0DC17C006A0857 /* XHLoadMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHLoadMoreView.m; sourceTree = "<group>"; };
+		B3DE83F81A0DC17C006A0857 /* XHRefreshActivityIndicatorContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHRefreshActivityIndicatorContainerView.h; sourceTree = "<group>"; };
+		B3DE83F91A0DC17C006A0857 /* XHRefreshActivityIndicatorContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHRefreshActivityIndicatorContainerView.m; sourceTree = "<group>"; };
+		B3DE83FA1A0DC17C006A0857 /* XHRefreshCircleContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHRefreshCircleContainerView.h; sourceTree = "<group>"; };
+		B3DE83FB1A0DC17C006A0857 /* XHRefreshCircleContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHRefreshCircleContainerView.m; sourceTree = "<group>"; };
+		B3DE840A1A0DC224006A0857 /* XHSegueItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSegueItem.h; sourceTree = "<group>"; };
+		B3DE840B1A0DC224006A0857 /* XHSegueItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSegueItem.m; sourceTree = "<group>"; };
+		B3DE840D1A0DC224006A0857 /* NSDate+TimeAgo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TimeAgo.h"; sourceTree = "<group>"; };
+		B3DE840E1A0DC224006A0857 /* NSDate+TimeAgo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TimeAgo.m"; sourceTree = "<group>"; };
+		B3DE840F1A0DC224006A0857 /* NSDateTimeAgo.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NSDateTimeAgo.bundle; sourceTree = "<group>"; };
+		B3DE84131A0DC249006A0857 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B3DE84151A0DC251006A0857 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B3DE84171A0DC257006A0857 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +139,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3DE84181A0DC257006A0857 /* Foundation.framework in Frameworks */,
+				B3DE84161A0DC251006A0857 /* UIKit.framework in Frameworks */,
+				B3DE84141A0DC249006A0857 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +197,10 @@
 		B35AB33919FA970B0063034C = {
 			isa = PBXGroup;
 			children = (
+				B3DE84171A0DC257006A0857 /* Foundation.framework */,
+				B3DE84151A0DC251006A0857 /* UIKit.framework */,
+				B3DE84131A0DC249006A0857 /* CoreGraphics.framework */,
+				B3DE83D91A0DC17C006A0857 /* External */,
 				B35AB34419FA970B0063034C /* UICatalog */,
 				B35AB36119FA970B0063034C /* UICatalogTests */,
 				B35AB34319FA970B0063034C /* Products */,
@@ -212,6 +273,119 @@
 			);
 			name = Activity;
 			sourceTree = "<group>";
+		};
+		B3DE83D91A0DC17C006A0857 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				B3DE83DA1A0DC17C006A0857 /* RefreshControl */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		B3DE83DA1A0DC17C006A0857 /* RefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				B3DE83DB1A0DC17C006A0857 /* Controllers */,
+				B3DE83ED1A0DC17C006A0857 /* Manager */,
+				B3DE83F11A0DC17C006A0857 /* Views */,
+			);
+			path = RefreshControl;
+			sourceTree = "<group>";
+		};
+		B3DE83DB1A0DC17C006A0857 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B3DE84091A0DC224006A0857 /* Models */,
+				B3DE840C1A0DC224006A0857 /* Vendor */,
+				B3DE83DC1A0DC17C006A0857 /* CustomTableViewController */,
+				B3DE83E31A0DC17C006A0857 /* SystemCollectionViewController */,
+				B3DE83E81A0DC17C006A0857 /* SystemTableViewController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B3DE83DC1A0DC17C006A0857 /* CustomTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B3DE83DD1A0DC17C006A0857 /* XHBaseTableViewController.h */,
+				B3DE83DE1A0DC17C006A0857 /* XHBaseTableViewController.m */,
+				B3DE83DF1A0DC17C006A0857 /* XHFoundationCommon.h */,
+				B3DE83E01A0DC17C006A0857 /* XHFoundationCommon.m */,
+				B3DE83E11A0DC17C006A0857 /* XHPullRefreshTableViewController.h */,
+				B3DE83E21A0DC17C006A0857 /* XHPullRefreshTableViewController.m */,
+			);
+			path = CustomTableViewController;
+			sourceTree = "<group>";
+		};
+		B3DE83E31A0DC17C006A0857 /* SystemCollectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B3DE83E41A0DC17C006A0857 /* XHSystemCollectionViewController.h */,
+				B3DE83E51A0DC17C006A0857 /* XHSystemCollectionViewController.m */,
+				B3DE83E61A0DC17C006A0857 /* XHSystemRefreshCollectionViewController.h */,
+				B3DE83E71A0DC17C006A0857 /* XHSystemRefreshCollectionViewController.m */,
+			);
+			path = SystemCollectionViewController;
+			sourceTree = "<group>";
+		};
+		B3DE83E81A0DC17C006A0857 /* SystemTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B3DE83E91A0DC17C006A0857 /* XHSysatemRefreshTableViewController.h */,
+				B3DE83EA1A0DC17C006A0857 /* XHSysatemRefreshTableViewController.m */,
+				B3DE83EB1A0DC17C006A0857 /* XHSystemTableViewController.h */,
+				B3DE83EC1A0DC17C006A0857 /* XHSystemTableViewController.m */,
+			);
+			path = SystemTableViewController;
+			sourceTree = "<group>";
+		};
+		B3DE83ED1A0DC17C006A0857 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				B3DE83EE1A0DC17C006A0857 /* XHRefreshControl.h */,
+				B3DE83EF1A0DC17C006A0857 /* XHRefreshControl.m */,
+				B3DE83F01A0DC17C006A0857 /* XHRefreshControlHeader.h */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		B3DE83F11A0DC17C006A0857 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B3DE83F21A0DC17C006A0857 /* XHActivityCircleIndicatorView.h */,
+				B3DE83F31A0DC17C006A0857 /* XHActivityCircleIndicatorView.m */,
+				B3DE83F41A0DC17C006A0857 /* XHCircleView.h */,
+				B3DE83F51A0DC17C006A0857 /* XHCircleView.m */,
+				B3DE83F61A0DC17C006A0857 /* XHLoadMoreView.h */,
+				B3DE83F71A0DC17C006A0857 /* XHLoadMoreView.m */,
+				B3DE83F81A0DC17C006A0857 /* XHRefreshActivityIndicatorContainerView.h */,
+				B3DE83F91A0DC17C006A0857 /* XHRefreshActivityIndicatorContainerView.m */,
+				B3DE83FA1A0DC17C006A0857 /* XHRefreshCircleContainerView.h */,
+				B3DE83FB1A0DC17C006A0857 /* XHRefreshCircleContainerView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B3DE84091A0DC224006A0857 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B3DE840A1A0DC224006A0857 /* XHSegueItem.h */,
+				B3DE840B1A0DC224006A0857 /* XHSegueItem.m */,
+			);
+			name = Models;
+			path = External/RefreshControl/Models;
+			sourceTree = SOURCE_ROOT;
+		};
+		B3DE840C1A0DC224006A0857 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				B3DE840D1A0DC224006A0857 /* NSDate+TimeAgo.h */,
+				B3DE840E1A0DC224006A0857 /* NSDate+TimeAgo.m */,
+				B3DE840F1A0DC224006A0857 /* NSDateTimeAgo.bundle */,
+			);
+			name = Vendor;
+			path = External/RefreshControl/Vendor;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -294,6 +468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FF693BC1A04C17E0028E02F /* customHeaderView.xib in Resources */,
+				B3DE84121A0DC224006A0857 /* NSDateTimeAgo.bundle in Resources */,
 				0FDFDE0819FB9571004AE6E1 /* CustomCell.xib in Resources */,
 				B305B1071A0286C600F21F95 /* NonARCViewController.xib in Resources */,
 				B35AB35419FA970B0063034C /* Main.storyboard in Resources */,
@@ -317,19 +492,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3DE84051A0DC17C006A0857 /* XHCircleView.m in Sources */,
+				B3DE84071A0DC17C006A0857 /* XHRefreshActivityIndicatorContainerView.m in Sources */,
+				B3DE84061A0DC17C006A0857 /* XHLoadMoreView.m in Sources */,
+				B3DE83FE1A0DC17C006A0857 /* XHPullRefreshTableViewController.m in Sources */,
 				0FF693BA1A04C1140028E02F /* customHeaderView.m in Sources */,
+				B3DE83FF1A0DC17C006A0857 /* XHSystemCollectionViewController.m in Sources */,
 				B35AB35119FA970B0063034C /* SecondViewController.m in Sources */,
+				B3DE84111A0DC224006A0857 /* NSDate+TimeAgo.m in Sources */,
+				B3DE84021A0DC17C006A0857 /* XHSystemTableViewController.m in Sources */,
+				B3DE84081A0DC17C006A0857 /* XHRefreshCircleContainerView.m in Sources */,
+				B3DE84101A0DC224006A0857 /* XHSegueItem.m in Sources */,
+				B3DE83FC1A0DC17C006A0857 /* XHBaseTableViewController.m in Sources */,
 				B305B1061A0286C600F21F95 /* NonARCViewController.m in Sources */,
 				B35AB34B19FA970B0063034C /* AppDelegate.m in Sources */,
+				B3DE84011A0DC17C006A0857 /* XHSysatemRefreshTableViewController.m in Sources */,
 				B35AB37119FA9C020063034C /* ActivityTableViewController.m in Sources */,
 				B35AB34E19FA970B0063034C /* FirstViewController.m in Sources */,
 				0FF693B71A04B6C00028E02F /* ActivityTableSource.m in Sources */,
 				0FDFDE0619FB9556004AE6E1 /* CustomCell.m in Sources */,
 				B305B10A1A028A6500F21F95 /* singleton.m in Sources */,
+				B3DE83FD1A0DC17C006A0857 /* XHFoundationCommon.m in Sources */,
+				B3DE84041A0DC17C006A0857 /* XHActivityCircleIndicatorView.m in Sources */,
+				B3DE84031A0DC17C006A0857 /* XHRefreshControl.m in Sources */,
 				0FDFDE0219FB8391004AE6E1 /* CustomSearchBar.m in Sources */,
 				B35AB34819FA970B0063034C /* main.m in Sources */,
 				0FF693B41A04B6320028E02F /* ActivityViewController.m in Sources */,
 				B3027E311A0DBDA3008D3C28 /* LocationManager.m in Sources */,
+				B3DE84001A0DC17C006A0857 /* XHSystemRefreshCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

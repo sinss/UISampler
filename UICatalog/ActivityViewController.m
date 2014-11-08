@@ -11,6 +11,7 @@
 #import "CustomSearchBar.h"
 #import "CustomCell.h"
 #import "customHeaderView.h"
+#import "NSDate+TimeAgo.h"
 
 @interface ActivityViewController () <UIScrollViewDelegate, ActivityScrollDelegate>
 
@@ -46,6 +47,13 @@
     [self.tableView reloadData];
     
     self.tableView.tableHeaderView = self.tableviewHeader;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self startPullDownRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -143,6 +151,93 @@
         [_tableviewHeader setBlock:ActionOptionBlock];
     }
     return _tableviewHeader;
+}
+
+#pragma mark - PullToRefreshing
+- (void)loadDataSource {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSMutableArray *dataSource = [[NSMutableArray alloc] init];
+        for (int i = 0; i < 100; i ++) {
+            [dataSource addObject:@"请问你现在在哪里啊？我在广州天河"];
+        }
+        
+        NSMutableArray *indexPaths;
+        if (self.requestCurrentPage) {
+            indexPaths = [[NSMutableArray alloc] initWithCapacity:dataSource.count];
+            [dataSource enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                [indexPaths addObject:[NSIndexPath indexPathForRow:self.dataSource.count + idx inSection:0]];
+            }];
+        }
+        sleep(1.5);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (self.requestCurrentPage) {
+                if (self.requestCurrentPage == arc4random() % 10) {
+                    [self endMoreOverWithMessage:@"段子已加载完"];
+                } else {
+                    
+                    [self.dataSource addObjectsFromArray:dataSource];
+                    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
+                    [self endLoadMoreRefreshing];
+                }
+            } else {
+                if (rand() % 3 > 1) {
+                    self.loadMoreRefreshed = NO;
+                }
+                
+                self.dataSource = dataSource;
+                [self.tableView reloadData];
+                [self endPullDownRefreshing];
+            }
+        });
+    });
+}
+
+#pragma mark - XHRefreshControl Delegate
+
+- (NSString *)lastUpdateTimeString {
+    
+    NSDate *nowDate = [NSDate date];
+    
+    NSString *destDateString = [nowDate timeAgo];
+    
+    return destDateString;
+}
+
+- (UIView *)customPullDownRefreshView {
+    UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, -60, 320, 60)];
+    backgroundView.backgroundColor = [UIColor whiteColor];
+    UIProgressView *progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleBar];
+    progressView.tag = 100;
+    progressView.frame = CGRectMake(0, CGRectGetHeight(backgroundView.bounds) / 2.0 - 3, 320, 3);
+    if ([progressView respondsToSelector:@selector(setTintColor:)]) {
+        progressView.tintColor = [UIColor orangeColor];
+    }
+    [backgroundView addSubview:progressView];
+    return backgroundView;
+}
+
+- (void)customPullDownRefreshView:(UIView *)customPullDownRefreshView withPullDownOffset:(CGFloat)pullDownOffset {
+    UIProgressView *progessView = (UIProgressView *)[customPullDownRefreshView viewWithTag:100];
+    [progessView setProgress:pullDownOffset / 40.0 animated:NO];
+}
+
+- (void)customPullDownRefreshViewWillStartRefresh:(UIView *)customPullDownRefreshView {
+    UIProgressView *progressView = (UIProgressView *)[customPullDownRefreshView viewWithTag:100];
+    [progressView setProgress:1.0];
+    if ([progressView respondsToSelector:@selector(setTintColor:)]) {
+        [progressView setTintColor:[UIColor greenColor]];
+    }
+}
+
+- (void)customPullDownRefreshViewWillEndRefresh:(UIView *)customPullDownRefreshView {
+    UIProgressView *progressView = (UIProgressView *)[customPullDownRefreshView viewWithTag:100];
+    if ([progressView respondsToSelector:@selector(setTintColor:)]) {
+        [progressView setTintColor:[UIColor greenColor]];
+    }
+    [progressView setProgress:0.0 animated:NO];
+}
+- (CGFloat)preloadDistance {
+    return 1500;
 }
 
 @end

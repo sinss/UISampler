@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Perfectidea. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "XHPullRefreshTableViewController.h"
 
-@interface ActivityViewController : UIViewController
+@interface ActivityViewController : XHPullRefreshTableViewController
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 
