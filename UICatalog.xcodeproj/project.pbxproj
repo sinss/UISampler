@@ -15,6 +15,7 @@
 		0FF693B71A04B6C00028E02F /* ActivityTableSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF693B61A04B6C00028E02F /* ActivityTableSource.m */; };
 		0FF693BA1A04C1140028E02F /* customHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF693B91A04C1140028E02F /* customHeaderView.m */; };
 		0FF693BC1A04C17E0028E02F /* customHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FF693BB1A04C17E0028E02F /* customHeaderView.xib */; };
+		B3027E311A0DBDA3008D3C28 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B3027E301A0DBDA3008D3C28 /* LocationManager.m */; };
 		B305B1061A0286C600F21F95 /* NonARCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B305B1041A0286C600F21F95 /* NonARCViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B305B1071A0286C600F21F95 /* NonARCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B305B1051A0286C600F21F95 /* NonARCViewController.xib */; };
 		B305B10A1A028A6500F21F95 /* singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = B305B1091A028A6500F21F95 /* singleton.m */; };
@@ -53,6 +54,8 @@
 		0FF693B81A04C1140028E02F /* customHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = customHeaderView.h; sourceTree = "<group>"; };
 		0FF693B91A04C1140028E02F /* customHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customHeaderView.m; sourceTree = "<group>"; };
 		0FF693BB1A04C17E0028E02F /* customHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = customHeaderView.xib; sourceTree = "<group>"; };
+		B3027E2F1A0DBDA3008D3C28 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
+		B3027E301A0DBDA3008D3C28 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
 		B305B1031A0286C600F21F95 /* NonARCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonARCViewController.h; sourceTree = "<group>"; };
 		B305B1041A0286C600F21F95 /* NonARCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonARCViewController.m; sourceTree = "<group>"; };
 		B305B1051A0286C600F21F95 /* NonARCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NonARCViewController.xib; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 				B305B1091A028A6500F21F95 /* singleton.m */,
 				0FF693B51A04B6C00028E02F /* ActivityTableSource.h */,
 				0FF693B61A04B6C00028E02F /* ActivityTableSource.m */,
+				B3027E2F1A0DBDA3008D3C28 /* LocationManager.h */,
+				B3027E301A0DBDA3008D3C28 /* LocationManager.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -324,6 +329,7 @@
 				0FDFDE0219FB8391004AE6E1 /* CustomSearchBar.m in Sources */,
 				B35AB34819FA970B0063034C /* main.m in Sources */,
 				0FF693B41A04B6320028E02F /* ActivityViewController.m in Sources */,
+				B3027E311A0DBDA3008D3C28 /* LocationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

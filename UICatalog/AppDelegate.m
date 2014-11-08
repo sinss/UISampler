@@ -49,14 +49,42 @@
 - (void)createLocationManager
 {
     self.locmanager = [[CLLocationManager alloc] init];
-    
+    if ([self.locmanager respondsToSelector:@selector(requestAlwaysAuthorization)])
+    {
+        [self.locmanager requestAlwaysAuthorization];
+    }
     [_locmanager setDelegate:self];
+    [_locmanager setDistanceFilter:1.0f];
+    [_locmanager setHeadingFilter:kCLHeadingFilterNone];
     
     //精準度，愈精準愈耗電。
     [_locmanager setDesiredAccuracy:kCLLocationAccuracyBest];
     
+    [self startUpdatingLocation];
+    /*
+     注意
+     NSLocationAlwaysUsageDescription
+     NSLocationAlwaysUsageDescription
+     在Setting Info.plist裡面一定要加上這兩組Key才可以正常使用(iOS8)
+     */
+}
+
+- (void)stopUpdatingLocation
+{
+    [_locmanager stopUpdatingLocation];
+    [_locmanager stopUpdatingHeading];
+}
+
+- (void)startUpdatingLocation
+{
     //開始定位
     [_locmanager startUpdatingLocation];
+    
+    NSLog(@"(1) lat : %f, long : %f", _locmanager.location.coordinate.latitude, _locmanager.location.coordinate.longitude);
+    
+    [_locmanager startUpdatingHeading];
+    
+    NSLog(@"(2) lat : %f, long : %f", _locmanager.location.coordinate.latitude, _locmanager.location.coordinate.longitude);
 }
 
 #pragma mark - LocationManagerDelegate

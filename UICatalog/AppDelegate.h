@@ -20,6 +20,8 @@
  */
 @property (strong, nonatomic) CLLocationManager *locmanager;
 
+- (void)stopUpdatingLocation;
+- (void)startUpdatingLocation;
 
 @end
 
