@@ -17,6 +17,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [self createLocationManager];
+    
     return YES;
 }
 
@@ -40,6 +43,31 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Private Method
+- (void)createLocationManager
+{
+    self.locmanager = [[CLLocationManager alloc] init];
+    
+    [_locmanager setDelegate:self];
+    
+    //精準度，愈精準愈耗電。
+    [_locmanager setDesiredAccuracy:kCLLocationAccuracyBest];
+    
+    //開始定位
+    [_locmanager startUpdatingLocation];
+}
+
+#pragma mark - LocationManagerDelegate
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"(old) lat : %f, long : %f", oldLocation.coordinate.latitude, oldLocation.coordinate.longitude);
+    NSLog(@"(new) lat : %f, long : %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    
 }
 
 @end
