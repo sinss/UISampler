@@ -7,7 +7,26 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
+#import <CoreLocation/CLLocationManagerDelegate.h>
 
-@interface LocationManager : NSObject
+@interface LocationManager : NSObject <CLLocationManagerDelegate>
+
+/*
+ 此裝置的Location
+ */
+@property (strong, nonatomic) CLLocationManager *locmanager;
+
++ (LocationManager*)sharedInstance;
+
+- (id)initwithSometype:(NSInteger)type;
+
+- (void)stopUpdatingLocation;
+- (void)startUpdatingLocation;
+
+- (BOOL)locationServicesEnabled;
+
+//取得經緯度
+- (CLLocation*)getCurrentLocation;
 
 @end

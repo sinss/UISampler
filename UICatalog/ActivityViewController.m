@@ -12,8 +12,11 @@
 #import "CustomCell.h"
 #import "customHeaderView.h"
 #import "NSDate+TimeAgo.h"
+#import "ActionAViewController.h"
+#import "ActionBViewController.h"
 
-@interface ActivityViewController () <UIScrollViewDelegate, ActivityScrollDelegate>
+
+@interface ActivityViewController () <UIScrollViewDelegate, ActivityScrollDelegate, customHeaderViewAction>
 
 @property (nonatomic, strong) ActivityTableSource *tableSource;
 @property (nonatomic, strong) CustomSearchBar *searchBar;
@@ -24,6 +27,7 @@
 @implementation ActivityViewController
 
 - (void)viewDidLoad{
+    
     [super viewDidLoad];
     /*
      Create UIBarButton in UINavitaionBar
@@ -136,6 +140,31 @@
     }
 }
 
+#pragma mark - customActionHeaderDelegate
+- (void)customHeader:(customHeaderView *)view didSelectAction:(ActionOptions)action
+{
+    
+    if (action == ActionOptionsA)
+    {
+        ActionAViewController *vc = [[ActionAViewController alloc] initWithNibName:@"ActionAViewController" bundle:nil];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+        
+        [self presentViewController:nav animated:YES completion:^(){
+            //do something
+        }];
+    }
+    else if (action == ActionOptionsB)
+    {
+        ActionBViewController *vc = [[ActionBViewController alloc] initWithNibName:@"ActionBViewController" bundle:nil];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+        
+        [self presentViewController:nav animated:YES completion:^(){
+            //do something
+        }];
+    }
+    NSLog(@"Action : %i", (int)action);
+}
+
 - (customHeaderView*)tableviewHeader
 {
     //define a block
@@ -148,7 +177,8 @@
     {
         _tableviewHeader = [[[NSBundle mainBundle] loadNibNamed:@"customHeaderView" owner:self options:nil] objectAtIndex:0];
         _tableviewHeader.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 30);
-        [_tableviewHeader setBlock:ActionOptionBlock];
+        [_tableviewHeader setBlock:nil];
+        _tableviewHeader.delegate = self;
     }
     return _tableviewHeader;
 }

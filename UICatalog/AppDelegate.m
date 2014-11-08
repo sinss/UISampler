@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "LocationManager.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +19,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [self createLocationManager];
+    //[self createLocationManager];
+    
+    [[LocationManager sharedInstance] startUpdatingLocation];
     
     return YES;
 }
@@ -48,7 +51,7 @@
 #pragma mark - Private Method
 - (void)createLocationManager
 {
-    self.locmanager = [[CLLocationManager alloc] init];
+    _locmanager = [[CLLocationManager alloc] init];
     if ([self.locmanager respondsToSelector:@selector(requestAlwaysAuthorization)])
     {
         [self.locmanager requestAlwaysAuthorization];
@@ -97,5 +100,6 @@
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     
 }
+
 
 @end

@@ -10,7 +10,7 @@
 
 typedef NS_ENUM(NSInteger, ActionOptions)
 {
-    ActionOptionsA,
+    ActionOptionsA = 0,
     ActionOptionsB,
     ActionOptionsC,
 };
@@ -35,6 +35,8 @@ typedef void (^ActionOptionBlock) (ActionOptions option);
 @end
 
 @protocol customHeaderViewAction <NSObject>
+
+@optional
 
 - (void)customHeader:(customHeaderView*)view didSelectAction:(ActionOptions)action;
 

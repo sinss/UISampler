@@ -18,10 +18,12 @@
 /*
  此裝置的Location
  */
-@property (strong, nonatomic) CLLocationManager *locmanager;
+@property (strong, readonly) CLLocationManager *locmanager;
 
 - (void)stopUpdatingLocation;
 - (void)startUpdatingLocation;
+
+- (CLLocation*)getCurrentLocation;
 
 @end
 
