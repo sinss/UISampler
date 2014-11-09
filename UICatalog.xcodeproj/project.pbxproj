@@ -163,6 +163,12 @@
 		B3DE84141A0DC249006A0857 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DE84131A0DC249006A0857 /* CoreGraphics.framework */; };
 		B3DE84161A0DC251006A0857 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DE84151A0DC251006A0857 /* UIKit.framework */; };
 		B3DE84181A0DC257006A0857 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DE84171A0DC257006A0857 /* Foundation.framework */; };
+		B3DE841B1A0FBE10006A0857 /* ActionBCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DE841A1A0FBE10006A0857 /* ActionBCell2.m */; };
+		B3DE841D1A0FBE21006A0857 /* ActionBCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3DE841C1A0FBE21006A0857 /* ActionBCell2.xib */; };
+		B3DE84201A0FC130006A0857 /* ActionAHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DE841F1A0FC130006A0857 /* ActionAHeader.m */; };
+		B3DE84231A0FC147006A0857 /* ActionBFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DE84221A0FC147006A0857 /* ActionBFooter.m */; };
+		B3DE84251A0FC155006A0857 /* ActionAHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3DE84241A0FC155006A0857 /* ActionAHeader.xib */; };
+		B3DE84271A0FC161006A0857 /* ActionBFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3DE84261A0FC161006A0857 /* ActionBFooter.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -369,6 +375,15 @@
 		B3DE84131A0DC249006A0857 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B3DE84151A0DC251006A0857 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B3DE84171A0DC257006A0857 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B3DE84191A0FBE10006A0857 /* ActionBCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionBCell2.h; sourceTree = "<group>"; };
+		B3DE841A1A0FBE10006A0857 /* ActionBCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionBCell2.m; sourceTree = "<group>"; };
+		B3DE841C1A0FBE21006A0857 /* ActionBCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionBCell2.xib; sourceTree = "<group>"; };
+		B3DE841E1A0FC130006A0857 /* ActionAHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionAHeader.h; sourceTree = "<group>"; };
+		B3DE841F1A0FC130006A0857 /* ActionAHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionAHeader.m; sourceTree = "<group>"; };
+		B3DE84211A0FC147006A0857 /* ActionBFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionBFooter.h; sourceTree = "<group>"; };
+		B3DE84221A0FC147006A0857 /* ActionBFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionBFooter.m; sourceTree = "<group>"; };
+		B3DE84241A0FC155006A0857 /* ActionAHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionAHeader.xib; sourceTree = "<group>"; };
+		B3DE84261A0FC161006A0857 /* ActionBFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionBFooter.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -531,6 +546,12 @@
 				0FF693B81A04C1140028E02F /* customHeaderView.h */,
 				0FF693B91A04C1140028E02F /* customHeaderView.m */,
 				0FF693BB1A04C17E0028E02F /* customHeaderView.xib */,
+				B3DE841E1A0FC130006A0857 /* ActionAHeader.h */,
+				B3DE841F1A0FC130006A0857 /* ActionAHeader.m */,
+				B3DE84241A0FC155006A0857 /* ActionAHeader.xib */,
+				B3DE84211A0FC147006A0857 /* ActionBFooter.h */,
+				B3DE84221A0FC147006A0857 /* ActionBFooter.m */,
+				B3DE84261A0FC161006A0857 /* ActionBFooter.xib */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -547,6 +568,9 @@
 				0F1208281A0E080C0020EF9C /* ActionBCell.h */,
 				0F1208291A0E080C0020EF9C /* ActionBCell.m */,
 				0F12082A1A0E080C0020EF9C /* ActionBCell.xib */,
+				B3DE84191A0FBE10006A0857 /* ActionBCell2.h */,
+				B3DE841A1A0FBE10006A0857 /* ActionBCell2.m */,
+				B3DE841C1A0FBE21006A0857 /* ActionBCell2.xib */,
 			);
 			name = "Custom Cells";
 			sourceTree = "<group>";
@@ -857,6 +881,7 @@
 				0F12082C1A0E080C0020EF9C /* ActionBCell.xib in Resources */,
 				0FF693BC1A04C17E0028E02F /* customHeaderView.xib in Resources */,
 				B3DE84121A0DC224006A0857 /* NSDateTimeAgo.bundle in Resources */,
+				B3DE84271A0FC161006A0857 /* ActionBFooter.xib in Resources */,
 				0F1208221A0DFCCC0020EF9C /* SearchMarkCell.xib in Resources */,
 				0F1208EC1A0E0A6A0020EF9C /* item_check@2x.png in Resources */,
 				0F12089D1A0E0A6A0020EF9C /* folder_online.png in Resources */,
@@ -876,6 +901,7 @@
 				0F1208BA1A0E0A6A0020EF9C /* act_downloadpng.png in Resources */,
 				0F1208A41A0E0A6A0020EF9C /* online_icon@2x.png in Resources */,
 				0F1208E41A0E0A6A0020EF9C /* host_host.png in Resources */,
+				B3DE84251A0FC155006A0857 /* ActionAHeader.xib in Resources */,
 				0F1208FD1A0E0A6A0020EF9C /* small_screen.png in Resources */,
 				0F1208C81A0E0A6A0020EF9C /* act_sorttype_ac@2x.png in Resources */,
 				B305B1071A0286C600F21F95 /* NonARCViewController.xib in Resources */,
@@ -945,6 +971,7 @@
 				0F1208B51A0E0A6A0020EF9C /* act_create@2x.png in Resources */,
 				0F1208B91A0E0A6A0020EF9C /* act_download@2x.png in Resources */,
 				0F1208C11A0E0A6A0020EF9C /* act_preview.png in Resources */,
+				B3DE841D1A0FBE21006A0857 /* ActionBCell2.xib in Resources */,
 				0F1208D91A0E0A6A0020EF9C /* file_other.png in Resources */,
 				0F1208B61A0E0A6A0020EF9C /* act_delete.png in Resources */,
 				0F1208271A0E07590020EF9C /* ActionBViewController.xib in Resources */,
@@ -1001,15 +1028,18 @@
 				B3DE84101A0DC224006A0857 /* XHSegueItem.m in Sources */,
 				B3DE83FC1A0DC17C006A0857 /* XHBaseTableViewController.m in Sources */,
 				B305B1061A0286C600F21F95 /* NonARCViewController.m in Sources */,
+				B3DE84201A0FC130006A0857 /* ActionAHeader.m in Sources */,
 				B35AB34B19FA970B0063034C /* AppDelegate.m in Sources */,
 				B3DE84011A0DC17C006A0857 /* XHSysatemRefreshTableViewController.m in Sources */,
 				0F1208211A0DFCCC0020EF9C /* SearchMarkCell.m in Sources */,
 				B35AB37119FA9C020063034C /* ActivityTableViewController.m in Sources */,
+				B3DE84231A0FC147006A0857 /* ActionBFooter.m in Sources */,
 				B35AB34E19FA970B0063034C /* FirstViewController.m in Sources */,
 				0FF693B71A04B6C00028E02F /* ActivityTableSource.m in Sources */,
 				0FDFDE0619FB9556004AE6E1 /* CustomCell.m in Sources */,
 				B305B10A1A028A6500F21F95 /* singleton.m in Sources */,
 				B3DE83FD1A0DC17C006A0857 /* XHFoundationCommon.m in Sources */,
+				B3DE841B1A0FBE10006A0857 /* ActionBCell2.m in Sources */,
 				B3DE84041A0DC17C006A0857 /* XHActivityCircleIndicatorView.m in Sources */,
 				B3DE84031A0DC17C006A0857 /* XHRefreshControl.m in Sources */,
 				0FDFDE0219FB8391004AE6E1 /* CustomSearchBar.m in Sources */,

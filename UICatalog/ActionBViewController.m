@@ -8,10 +8,24 @@
 
 #import "ActionBViewController.h"
 #import "ActionBCell.h"
+#import "ActionBCell2.h"
+#import "ActionAHeader.h"
+#import "ActionBFooter.h"
 
 #define cellIdenttifier @"ActionBCellIdentifier"
 
+typedef NS_ENUM(NSInteger, FooterOptios)
+{
+    FooterOptiosCamera,
+    FooterOptiosAddFriend,
+    FooterOptiosEmoji,
+    FooterOptiosLocation,
+};
+
 @interface ActionBViewController ()
+
+@property (nonatomic, strong) ActionAHeader *headerView;
+@property (nonatomic, strong) ActionBFooter *footerView;
 
 @end
 
@@ -57,19 +71,30 @@
     return 1;
 }
 
-- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    return nil;
-}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 250.f;
+    //Cell高度需要扣掉上方Navigationbar & footerView & headerView的高度
+    return self.view.frame.size.height - 80 - 64;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 44.0f;
+    return 40;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 40;
+}
+
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return self.headerView;
+}
+
+- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    return self.footerView;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -136,6 +161,26 @@
     [self dismissViewControllerAnimated:YES completion:^(){
         
     }];
+}
+
+- (ActionAHeader*)headerView
+{
+    if (!_headerView)
+    {
+        _headerView = [[[NSBundle mainBundle] loadNibNamed:@"ActionAHeader" owner:self options:nil] objectAtIndex:0];
+        _headerView.frame = CGRectMake(0, 0, self.view.frame.size.width, 40);
+    }
+    return _headerView;
+}
+
+- (ActionBFooter*)footerView
+{
+    if (!_footerView)
+    {
+        self.footerView = [[[NSBundle mainBundle] loadNibNamed:@"ActionBFooter" owner:self options:nil] objectAtIndex:0];
+        self.footerView.frame = CGRectMake(0, 0, self.view.frame.size.width, 40);
+    }
+    return _footerView;
 }
 
 

@@ -44,22 +44,6 @@
 - (void)createLocationManager
 {
     self.locmanager = [[CLLocationManager alloc] init];
-    /*
-     iOS8 以上
-     */
-    if ([self.locmanager respondsToSelector:@selector(requestAlwaysAuthorization)])
-    {
-        //[self.locmanager requestWhenInUseAuthorization];
-        [self.locmanager requestAlwaysAuthorization];
-    }
-    [_locmanager setDelegate:self];
-    //設定人在移動多遠時才會定位的距離
-    [_locmanager setDistanceFilter:1.0f];
-    //degree -->手機在轉動時
-    [_locmanager setHeadingFilter:kCLHeadingFilterNone];
-    
-    //精準度，愈精準愈耗電。
-    [_locmanager setDesiredAccuracy:kCLLocationAccuracyBest];
     
     //[self startUpdatingLocation];
     /*
@@ -78,6 +62,22 @@
 
 - (void)startUpdatingLocation
 {
+    /*
+     iOS8 以上
+     */
+    if ([self.locmanager respondsToSelector:@selector(requestAlwaysAuthorization)])
+    {
+        //[self.locmanager requestWhenInUseAuthorization];
+        [self.locmanager requestAlwaysAuthorization];
+    }
+    [_locmanager setDelegate:self];
+    //設定人在移動多遠時才會定位的距離
+    [_locmanager setDistanceFilter:1.0f];
+    //degree -->手機在轉動時
+    [_locmanager setHeadingFilter:kCLHeadingFilterNone];
+    
+    //精準度，愈精準愈耗電。
+    [_locmanager setDesiredAccuracy:kCLLocationAccuracyBest];
     //開始定位
     [_locmanager startUpdatingLocation];
     
@@ -96,7 +96,17 @@
 - (BOOL)locationServicesEnabled
 {
     NSLog(@"locationService is %@", [CLLocationManager locationServicesEnabled] ? @"YES" : @"NO");
-    return [CLLocationManager locationServicesEnabled];
+    if([CLLocationManager locationServicesEnabled])
+    {
+        
+        NSLog(@"Location Services Enabled");
+        
+        if([CLLocationManager authorizationStatus]==kCLAuthorizationStatusDenied)
+        {
+            return NO;
+        }
+    }
+    return YES;
 }
 
 
