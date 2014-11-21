@@ -10,17 +10,17 @@
 
 typedef NS_ENUM(NSInteger, Footer)
 {
-    FooterA,
-    FooterB,
-    FooterC,
-    FooterD,
+    FooterCamera,
+    FooterPeople,
+    FooterEmoji,
+    FooterLoation,
 };
 
 @protocol ActionFooterDelegate;
 
-@interface ActionBFooter : UITableViewHeaderFooterView
+@interface ActionBFooter : UIView
 
-@property (nonatomic, weak) id <ActionFooterDelegate> delegate;
+@property (nonatomic, weak) id <ActionFooterDelegate> actionDelegate;
 
 - (IBAction)ButtonPressed:(UIButton*)sender;
 

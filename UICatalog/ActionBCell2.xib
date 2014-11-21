@@ -54,7 +54,7 @@
             <connections>
                 <outlet property="contentLabel" destination="rcn-gN-vTn" id="NF3-cE-iZB"/>
             </connections>
-            <point key="canvasLocation" x="731" y="272"/>
+            <point key="canvasLocation" x="560" y="237"/>
         </tableViewCell>
     </objects>
     <resources>

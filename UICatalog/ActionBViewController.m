@@ -11,8 +11,14 @@
 #import "ActionBCell2.h"
 #import "ActionAHeader.h"
 #import "ActionBFooter.h"
+#import "CustomerKeyboard.h"
+#import "CustomInputAccessoryView.h"
+
+#import "PKImagePickerViewController.h"
 
 #define cellIdenttifier @"ActionBCellIdentifier"
+#define reuseHeaderIdentifier @"reuseHeaderIdentifier"
+#define reuseFooterIdentifier @"reuseFooterIdentifier"
 
 typedef NS_ENUM(NSInteger, FooterOptios)
 {
@@ -22,10 +28,13 @@ typedef NS_ENUM(NSInteger, FooterOptios)
     FooterOptiosLocation,
 };
 
-@interface ActionBViewController ()
+@interface ActionBViewController () <ActionFooterDelegate, UIActionSheetDelegate, PKImagePickerViewControllerDelegate, CustomKeyboardDelegate>
 
 @property (nonatomic, strong) ActionAHeader *headerView;
 @property (nonatomic, strong) ActionBFooter *footerView;
+@property (nonatomic, strong) CustomerKeyboard *customKeyboard;
+@property (nonatomic, strong) CustomInputAccessoryView *accessoryView;
+@property (nonatomic, strong) UIPlaceHolderTextView *textView;
 
 @end
 
@@ -37,6 +46,8 @@ typedef NS_ENUM(NSInteger, FooterOptios)
     [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
     [self createNnavigationBar];
     [self.tableView registerNib:[UINib nibWithNibName:@"ActionBCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cellIdenttifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"ActionBFooter" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:reuseHeaderIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"ActionAHeader" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:reuseFooterIdentifier];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     // Do any additional setup after loading the view from its nib.
@@ -101,6 +112,10 @@ typedef NS_ENUM(NSInteger, FooterOptios)
 {
     ActionBCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdenttifier forIndexPath:indexPath];
     
+    self.textView = cell.contentTextView;
+    self.textView.inputAccessoryView = self.accessoryView;
+    
+    [cell.contentTextView setPlaceholder:[NSString stringWithFormat:@"在想些什麼？"]];
     
     return cell;
 }
@@ -177,11 +192,133 @@ typedef NS_ENUM(NSInteger, FooterOptios)
 {
     if (!_footerView)
     {
-        self.footerView = [[[NSBundle mainBundle] loadNibNamed:@"ActionBFooter" owner:self options:nil] objectAtIndex:0];
-        self.footerView.frame = CGRectMake(0, 0, self.view.frame.size.width, 40);
+        _footerView = [[[NSBundle mainBundle] loadNibNamed:@"ActionBFooter" owner:self options:nil] objectAtIndex:0];
+        _footerView.frame = CGRectMake(0, 0, self.view.frame.size.width, 40);
+        _footerView.actionDelegate = self;
+        
+        /*
+        CALayer *layer = _footerView.layer;
+        //背景
+        layer.backgroundColor = [[UIColor whiteColor] CGColor];
+        //位移量
+        layer.shadowOffset = CGSizeMake(1, 1);
+        //陰隱的顏色
+        layer.shadowColor = [[UIColor darkGrayColor] CGColor];
+        //圓角
+        layer.shadowRadius = 3.0f;
+        //透明度
+        layer.shadowOpacity = 0.70f;
+        //陰影的路徑
+        layer.shadowPath = [[UIBezierPath bezierPathWithRect:layer.bounds] CGPath];
+        */
     }
     return _footerView;
 }
 
+- (CustomerKeyboard*)customKeyboard
+{
+    if (!_customKeyboard)
+    {
+        _customKeyboard = [[[NSBundle mainBundle] loadNibNamed:@"CustomKeyboard" owner:self options:nil] objectAtIndex:0];
+        _customKeyboard.delegate = self;
+    }
+    return _customKeyboard;
+}
+
+- (CustomInputAccessoryView*)accessoryView
+{
+    if (!_accessoryView)
+    {
+        _accessoryView = [[[NSBundle mainBundle] loadNibNamed:@"CustomInputAccessoryView" owner:self options:nil] objectAtIndex:0];
+        _accessoryView.delegate = self;
+    }
+    return _accessoryView;
+}
+
+#pragma mark - ActionFooterViewDelegate
+
+- (void)footerView:(ActionBFooter*)footer actionForAction:(Footer)action
+{
+    switch (action)
+    {
+        case FooterCamera:
+            [self showActionSheet];
+            break;
+        case FooterPeople:
+            
+            break;
+        case FooterEmoji:
+            [self switchCustomKeyboard];
+            break;
+        case FooterLoation:
+            
+            break;
+    }
+}
+
+#pragma mark - Camera
+//TODO : 拍照
+- (void)showActionSheet
+{
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"請選擇來源" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"相機" otherButtonTitles:@"相簿", nil];
+    [sheet showFromTabBar:self.tabBarController.tabBar];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        //相機
+        @autoreleasepool {
+            PKImagePickerViewController *imagePicker = [[PKImagePickerViewController alloc] init];
+            imagePicker.delegate = self;
+            [self presentViewController:imagePicker animated:YES completion:nil];
+        }
+        
+    }
+    else if (buttonIndex == 1)
+    {
+        //相簿
+    }
+}
+
+#pragma mark PKCameraImagePickerDelegate
+-(void)imageSelected:(UIImage*)img
+{
+    
+}
+
+-(void)imageSelectionCancelled
+{
+    
+}
+
+#pragma mark - People
+//TODO : 取得好友清單
+#pragma mark - Emoji
+- (void)switchCustomKeyboard
+{
+    [self.textView resignFirstResponder];
+    self.textView.inputView = self.customKeyboard;
+    [self.textView becomeFirstResponder];
+}
+
+- (void)customKeyboardDoClose:(UIView *)view
+{
+    if ([view isKindOfClass:[CustomInputAccessoryView class]])
+    {
+        [self.textView resignFirstResponder];
+    }
+    else if ([view isKindOfClass:[CustomerKeyboard class]])
+    {
+        [self.textView resignFirstResponder];
+        self.textView.inputView = nil;
+        [self.textView becomeFirstResponder];
+    }
+}
+
+//TODO : 建立客製鍵盤
+#pragma mark - Location
+//TODO : 取得定位附近地點資訊
 
 @end

@@ -31,5 +31,16 @@
     }
 }
 
+- (void)showInView:(UIView*)view offset:(CGPoint)offset
+{
+    
+}
+
+- (void)dismiss
+{
+    
+}
+
+
 
 @end

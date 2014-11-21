@@ -20,9 +20,9 @@
 
 - (IBAction)ButtonPressed:(UIButton*)sender
 {
-    if ([self.delegate respondsToSelector:@selector(footerView:actionForAction:)])
+    if ([self.actionDelegate respondsToSelector:@selector(footerView:actionForAction:)])
     {
-        [self.delegate footerView:self actionForAction:sender.tag];
+        [self.actionDelegate footerView:self actionForAction:sender.tag];
     }
 }
 

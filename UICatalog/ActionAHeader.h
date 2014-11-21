@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ActionAHeader : UIView
+@interface ActionAHeader : UITableViewHeaderFooterView
 
 @end

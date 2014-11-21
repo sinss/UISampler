@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+//customize a TextView with placeHolder
+#import "UIPlaceHolderTextView.h"
 @interface ActionBCell : UITableViewCell
 
 @property (nonatomic, strong) IBOutlet UIImageView *iconView;
-@property (nonatomic, strong) IBOutlet UITextView *contentView;
+@property (nonatomic, strong) IBOutlet UIPlaceHolderTextView *contentTextView;
 
 @end

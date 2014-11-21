@@ -14,15 +14,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="wakable.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ypa-Ay-OlK">
-                        <rect key="frame" x="8" y="9" width="75" height="75"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wakable.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ypa-Ay-OlK">
+                        <rect key="frame" x="8" y="8" width="75" height="75"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="75" id="pbL-Hc-0Ak"/>
                             <constraint firstAttribute="width" constant="75" id="yfV-Eg-WHv"/>
                         </constraints>
                     </imageView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="在想些什麼？" translatesAutoresizingMaskIntoConstraints="NO" id="Hrc-4H-rzh">
-                        <rect key="frame" x="91" y="10" width="221" height="232"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hrc-4H-rzh" customClass="UIPlaceHolderTextView">
+                        <rect key="frame" x="91" y="10" width="221" height="231"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -38,7 +38,10 @@
                     <constraint firstItem="Ypa-Ay-OlK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="uwy-fX-x5f"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="506" y="326"/>
+            <connections>
+                <outlet property="contentTextView" destination="Hrc-4H-rzh" id="aE8-Vh-Y53"/>
+            </connections>
+            <point key="canvasLocation" x="434" y="296"/>
         </tableViewCell>
     </objects>
     <resources>
