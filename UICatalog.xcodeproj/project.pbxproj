@@ -142,6 +142,7 @@
 		B310EB951A1FA44300129856 /* CustomKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = B310EB941A1FA44300129856 /* CustomKeyboard.xib */; };
 		B310EB981A1FA87600129856 /* CustomInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = B310EB971A1FA87600129856 /* CustomInputAccessoryView.m */; };
 		B310EB9A1A1FA89100129856 /* CustomInputAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B310EB991A1FA89100129856 /* CustomInputAccessoryView.xib */; };
+		B310EB9E1A204E4B00129856 /* Sample.m in Sources */ = {isa = PBXBuildFile; fileRef = B310EB9D1A204E4B00129856 /* Sample.m */; };
 		B35AB34819FA970B0063034C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B35AB34719FA970B0063034C /* main.m */; };
 		B35AB34B19FA970B0063034C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B35AB34A19FA970B0063034C /* AppDelegate.m */; };
 		B35AB34E19FA970B0063034C /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B35AB34D19FA970B0063034C /* FirstViewController.m */; };
@@ -326,6 +327,8 @@
 		B310EB971A1FA87600129856 /* CustomInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomInputAccessoryView.m; sourceTree = "<group>"; };
 		B310EB991A1FA89100129856 /* CustomInputAccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomInputAccessoryView.xib; sourceTree = "<group>"; };
 		B310EB9B1A1FA8EB00129856 /* CustomKeyboardDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomKeyboardDelegate.h; sourceTree = "<group>"; };
+		B310EB9C1A204E4B00129856 /* Sample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sample.h; sourceTree = "<group>"; };
+		B310EB9D1A204E4B00129856 /* Sample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sample.m; sourceTree = "<group>"; };
 		B35AB34219FA970B0063034C /* UICatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UICatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B35AB34619FA970B0063034C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B35AB34719FA970B0063034C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -566,6 +569,8 @@
 				0FF693B61A04B6C00028E02F /* ActivityTableSource.m */,
 				B3027E2F1A0DBDA3008D3C28 /* LocationManager.h */,
 				B3027E301A0DBDA3008D3C28 /* LocationManager.m */,
+				B310EB9C1A204E4B00129856 /* Sample.h */,
+				B310EB9D1A204E4B00129856 /* Sample.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -922,6 +927,7 @@
 				B3DE841B1A0FBE10006A0857 /* ActionBCell2.m in Sources */,
 				0FDFDE0219FB8391004AE6E1 /* CustomSearchBar.m in Sources */,
 				B35AB34819FA970B0063034C /* main.m in Sources */,
+				B310EB9E1A204E4B00129856 /* Sample.m in Sources */,
 				0FF693B41A04B6320028E02F /* ActivityViewController.m in Sources */,
 				B3027E311A0DBDA3008D3C28 /* LocationManager.m in Sources */,
 			);

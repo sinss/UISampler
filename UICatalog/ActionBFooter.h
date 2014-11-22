@@ -14,6 +14,7 @@ typedef NS_ENUM(NSInteger, Footer)
     FooterPeople,
     FooterEmoji,
     FooterLoation,
+    FooterClose = 9,
 };
 
 @protocol ActionFooterDelegate;

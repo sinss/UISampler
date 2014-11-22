@@ -33,7 +33,7 @@ typedef NS_ENUM(NSInteger, FooterOptios)
 @property (nonatomic, strong) ActionAHeader *headerView;
 @property (nonatomic, strong) ActionBFooter *footerView;
 @property (nonatomic, strong) CustomerKeyboard *customKeyboard;
-@property (nonatomic, strong) CustomInputAccessoryView *accessoryView;
+@property (nonatomic, strong) ActionBFooter *accessoryView;
 @property (nonatomic, strong) UIPlaceHolderTextView *textView;
 
 @end
@@ -188,6 +188,9 @@ typedef NS_ENUM(NSInteger, FooterOptios)
     return _headerView;
 }
 
+/*
+ 
+ */
 - (ActionBFooter*)footerView
 {
     if (!_footerView)
@@ -225,12 +228,29 @@ typedef NS_ENUM(NSInteger, FooterOptios)
     return _customKeyboard;
 }
 
-- (CustomInputAccessoryView*)accessoryView
+- (ActionBFooter*)accessoryView
 {
     if (!_accessoryView)
     {
-        _accessoryView = [[[NSBundle mainBundle] loadNibNamed:@"CustomInputAccessoryView" owner:self options:nil] objectAtIndex:0];
-        _accessoryView.delegate = self;
+        _accessoryView = [[[NSBundle mainBundle] loadNibNamed:@"ActionBFooter" owner:self options:nil] objectAtIndex:0];
+        _accessoryView.frame = CGRectMake(0, 0, self.view.frame.size.width, 40);
+        _accessoryView.actionDelegate = self;
+        
+        /*
+         CALayer *layer = _footerView.layer;
+         //背景
+         layer.backgroundColor = [[UIColor whiteColor] CGColor];
+         //位移量
+         layer.shadowOffset = CGSizeMake(1, 1);
+         //陰隱的顏色
+         layer.shadowColor = [[UIColor darkGrayColor] CGColor];
+         //圓角
+         layer.shadowRadius = 3.0f;
+         //透明度
+         layer.shadowOpacity = 0.70f;
+         //陰影的路徑
+         layer.shadowPath = [[UIBezierPath bezierPathWithRect:layer.bounds] CGPath];
+         */
     }
     return _accessoryView;
 }
@@ -252,6 +272,9 @@ typedef NS_ENUM(NSInteger, FooterOptios)
             break;
         case FooterLoation:
             
+            break;
+        case FooterClose:
+            [self.textView resignFirstResponder];
             break;
     }
 }
