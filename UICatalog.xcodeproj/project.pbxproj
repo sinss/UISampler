@@ -123,6 +123,8 @@
 		0F1209031A0E0A6A0020EF9C /* x_toolbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F1208981A0E0A6A0020EF9C /* x_toolbox@2x.png */; };
 		0F1209041A0E0A6A0020EF9C /* xplorer_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F1208991A0E0A6A0020EF9C /* xplorer_image.png */; };
 		0F1209051A0E0A6A0020EF9C /* xplorer_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F12089A1A0E0A6A0020EF9C /* xplorer_image@2x.png */; };
+		0FC9E68C1A2079570038A742 /* NSMutableDictionary+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC9E68B1A2079570038A742 /* NSMutableDictionary+extend.m */; };
+		0FC9E68F1A207ADF0038A742 /* NSString+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC9E68E1A207ADF0038A742 /* NSString+extend.m */; };
 		0FDFDDFF19FB80C0004AE6E1 /* CustomSearchBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FDFDDFE19FB80C0004AE6E1 /* CustomSearchBar.xib */; };
 		0FDFDE0219FB8391004AE6E1 /* CustomSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDFDE0119FB8391004AE6E1 /* CustomSearchBar.m */; };
 		0FDFDE0619FB9556004AE6E1 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDFDE0519FB9556004AE6E1 /* CustomCell.m */; };
@@ -295,6 +297,10 @@
 		0F1208981A0E0A6A0020EF9C /* x_toolbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "x_toolbox@2x.png"; sourceTree = "<group>"; };
 		0F1208991A0E0A6A0020EF9C /* xplorer_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xplorer_image.png; sourceTree = "<group>"; };
 		0F12089A1A0E0A6A0020EF9C /* xplorer_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xplorer_image@2x.png"; sourceTree = "<group>"; };
+		0FC9E68A1A2079570038A742 /* NSMutableDictionary+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+extend.h"; sourceTree = "<group>"; };
+		0FC9E68B1A2079570038A742 /* NSMutableDictionary+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+extend.m"; sourceTree = "<group>"; };
+		0FC9E68D1A207ADF0038A742 /* NSString+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+extend.h"; sourceTree = "<group>"; };
+		0FC9E68E1A207ADF0038A742 /* NSString+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+extend.m"; sourceTree = "<group>"; };
 		0FDFDDFE19FB80C0004AE6E1 /* CustomSearchBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSearchBar.xib; sourceTree = "<group>"; };
 		0FDFDE0019FB8391004AE6E1 /* CustomSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSearchBar.h; sourceTree = "<group>"; };
 		0FDFDE0119FB8391004AE6E1 /* CustomSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSearchBar.m; sourceTree = "<group>"; };
@@ -571,6 +577,10 @@
 				B3027E301A0DBDA3008D3C28 /* LocationManager.m */,
 				B310EB9C1A204E4B00129856 /* Sample.h */,
 				B310EB9D1A204E4B00129856 /* Sample.m */,
+				0FC9E68A1A2079570038A742 /* NSMutableDictionary+extend.h */,
+				0FC9E68B1A2079570038A742 /* NSMutableDictionary+extend.m */,
+				0FC9E68D1A207ADF0038A742 /* NSString+extend.h */,
+				0FC9E68E1A207ADF0038A742 /* NSString+extend.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -908,11 +918,13 @@
 				0F1208161A0DF93A0020EF9C /* ActionAViewController.m in Sources */,
 				0FF693BA1A04C1140028E02F /* customHeaderView.m in Sources */,
 				B310EB8B1A1F96AF00129856 /* UIPlaceHolderTextView.m in Sources */,
+				0FC9E68C1A2079570038A742 /* NSMutableDictionary+extend.m in Sources */,
 				B35AB35119FA970B0063034C /* SecondViewController.m in Sources */,
 				0F12082B1A0E080C0020EF9C /* ActionBCell.m in Sources */,
 				B310EB931A1FA42F00129856 /* CustomerKeyboard.m in Sources */,
 				0F1208261A0E07590020EF9C /* ActionBViewController.m in Sources */,
 				B305B1061A0286C600F21F95 /* NonARCViewController.m in Sources */,
+				0FC9E68F1A207ADF0038A742 /* NSString+extend.m in Sources */,
 				B310EB8E1A1FA21C00129856 /* PKImagePickerViewController.m in Sources */,
 				B3DE84201A0FC130006A0857 /* ActionAHeader.m in Sources */,
 				B35AB34B19FA970B0063034C /* AppDelegate.m in Sources */,

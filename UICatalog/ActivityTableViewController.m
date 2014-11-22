@@ -7,13 +7,11 @@
 //
 
 #import "ActivityTableViewController.h"
-#import "CustomSearchBar.h"
-#import "CustomCell.h"
 
-@interface ActivityTableViewController () <UISearchBarDelegate, CustomCellDelegate>
+@interface ActivityTableViewController ()
 
-@property (nonatomic, strong) CustomSearchBar *searchBar;
-@property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (nonatomic, strong) NSArray *items;
+@property (nonatomic, strong) NSArray *checkState;
 
 @end
 
@@ -27,16 +25,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.tableView registerNib:[UINib nibWithNibName:@"CustomCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cellIdentifier];
-    
+    [self createData];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    //self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     /*
      Create UIBarButton in UINavitaionBar
      */
     [self createNnavigationBar];
-    [self createRefreshControl];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -63,35 +59,9 @@
     self.navigationItem.leftBarButtonItems = @[item, done];
 }
 
-- (void)createRefreshControl
-{
-    self.refreshControl = [[UIRefreshControl alloc] init];
-    self.refreshControl.backgroundColor = [UIColor lightGrayColor];
-    self.refreshControl.tintColor = [UIColor whiteColor];
-    [self.refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
-}
-
-- (void)refresh:(id)sender
-{
-    NSLog(@"refresh!!");
-    [self.refreshControl performSelector:@selector(endRefreshing) withObject:nil afterDelay:3];
-}
-
 - (void)done:(id)sender
 {
-    NSLog(@"done!!!");
-}
-
-- (IBAction)searchItemPress:(id)sender
-{
-    if (self.searchBar.isShowing)
-    {
-        [self.searchBar dismiss];
-    }
-    else
-    {
-        [self.searchBar showInView:self.tableView offset:self.tableView.contentOffset];
-    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -102,39 +72,80 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 1;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 10;
+    return self.items.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 300.0f;
+    return 44.0f;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CustomCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    static NSString *cellIdentifier = @"cellIdentifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cellIdentifier"];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    NSInteger sec = indexPath.section;
+    NSInteger row = indexPath.row;
+    
+    NSArray *tmpArray = self.items[sec];
+    NSArray *state = self.checkState[sec];
+    BOOL check = [state[row] boolValue];
+    if (check)
+    {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else
+    {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    cell.textLabel.text = tmpArray[row];
+    
+    
     
     return cell;
 }
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSInteger sec = indexPath.section;
+    NSInteger row = indexPath.row;
+    
+    NSMutableArray *state = [NSMutableArray arrayWithArray:self.checkState[sec]];
+    
+    BOOL check = [state[row] boolValue];
+    
+    [state replaceObjectAtIndex:row withObject:[NSNumber numberWithBool:!check]];
+    
+    NSMutableArray *checkState = [NSMutableArray arrayWithArray:self.checkState];
+    
+    [checkState replaceObjectAtIndex:sec withObject:state];
+    
+    self.checkState = [NSArray arrayWithArray:checkState];
+    
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+}
 
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
-}
-*/
+
+ */
 
 /*
 // Override to support editing the table view.
@@ -179,49 +190,27 @@
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    if (self.searchBar.isShowing)
-    {
-        [self.searchBar dismiss];
-    }
-}
-
-#pragma mark - UISearchBarDelegate
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
-{
-    NSLog(@"Cancel!!");
-    if (self.searchBar.isShowing)
-    {
-        [self.searchBar dismiss];
-    }
-}
-
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
-{
-    NSLog(@"Search!!");
-}
-
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
-{
-    NSLog(@"text change");
-}
-
-- (BOOL)searchBar:(UISearchBar *)searchBar shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
-{
     
-    return YES;
 }
 
-#pragma mark - Accessors
-- (CustomSearchBar*)searchBar
+- (void)createData
 {
-    //lazy loader suggested from Apple
-    if (!_searchBar)
+    NSMutableArray *items = [NSMutableArray array];
+    NSMutableArray *checkStates = [NSMutableArray array];
+    for (int i = 0; i < 5; i++)
     {
-        _searchBar = [[[NSBundle mainBundle] loadNibNamed:@"CustomSearchBar" owner:self options:nil] objectAtIndex:0];
-        _searchBar.frame = CGRectMake(0, -kSearchBarHeight, self.view.frame.size.width, kSearchBarHeight);
-        _searchBar.searchBar.delegate = self;
+        NSMutableArray *set = [NSMutableArray array];
+        NSMutableArray *state = [NSMutableArray array];
+        for (int j = 0 ; j < 5 ; j++)
+        {
+            [set addObject:[NSString stringWithFormat:@"(%i, %i)",i ,j]];
+            [state addObject:@NO];
+        }
+        [items addObject:set];
+        [checkStates addObject:state];
     }
-    return _searchBar;
+    
+    self.items = [NSArray arrayWithArray:items];
+    self.checkState = [NSArray arrayWithArray:checkStates];
 }
-
 @end

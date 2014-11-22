@@ -51,6 +51,17 @@ CGFloat const UI_PLACEHOLDER_TEXT_CHANGED_ANIMATION_DURATION = 0.25;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChanged:) name:UITextViewTextDidChangeNotification object:nil];
 }
 
+//與awakeFromNib都會被執行，當使用xib建立元件時
+//- (id)initWithCoder:(NSCoder *)aDecoder
+//{
+//    self = [super initWithCoder:aDecoder]
+//    if (self)
+//    {
+//        
+//    }
+//    return self;
+//}
+
 /*
  初始化
  */

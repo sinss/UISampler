@@ -23,6 +23,8 @@
     
     [[LocationManager sharedInstance] startUpdatingLocation];
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"AAAAAAAA" object:@{}];
+    
     return YES;
 }
 

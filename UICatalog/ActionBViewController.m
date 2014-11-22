@@ -13,6 +13,7 @@
 #import "ActionBFooter.h"
 #import "CustomerKeyboard.h"
 #import "CustomInputAccessoryView.h"
+#import "ActivityTableViewController.h"
 
 #import "PKImagePickerViewController.h"
 
@@ -50,6 +51,9 @@ typedef NS_ENUM(NSInteger, FooterOptios)
     [self.tableView registerNib:[UINib nibWithNibName:@"ActionAHeader" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:reuseFooterIdentifier];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -57,6 +61,27 @@ typedef NS_ENUM(NSInteger, FooterOptios)
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - UIKeyboardWillShow & hide
+- (void)keyboardWillShow:(NSNotification*)noti
+{
+    [self.footerView setAlpha:0];
+    [self.accessoryView setAlpha:1];
+}
+
+- (void)keyboardWillHide:(NSNotification*)noti
+{
+    [self.footerView setAlpha:1];
+    [self.accessoryView setAlpha:0];
+    
+    self.textView.inputView = nil;
+}
+
 
 /*
 #pragma mark - Navigation
@@ -196,10 +221,11 @@ typedef NS_ENUM(NSInteger, FooterOptios)
     if (!_footerView)
     {
         _footerView = [[[NSBundle mainBundle] loadNibNamed:@"ActionBFooter" owner:self options:nil] objectAtIndex:0];
+        _footerView.tag = 0;
         _footerView.frame = CGRectMake(0, 0, self.view.frame.size.width, 40);
         _footerView.actionDelegate = self;
         
-        /*
+        
         CALayer *layer = _footerView.layer;
         //背景
         layer.backgroundColor = [[UIColor whiteColor] CGColor];
@@ -213,7 +239,7 @@ typedef NS_ENUM(NSInteger, FooterOptios)
         layer.shadowOpacity = 0.70f;
         //陰影的路徑
         layer.shadowPath = [[UIBezierPath bezierPathWithRect:layer.bounds] CGPath];
-        */
+        
     }
     return _footerView;
 }
@@ -233,10 +259,11 @@ typedef NS_ENUM(NSInteger, FooterOptios)
     if (!_accessoryView)
     {
         _accessoryView = [[[NSBundle mainBundle] loadNibNamed:@"ActionBFooter" owner:self options:nil] objectAtIndex:0];
+        _accessoryView.tag = 1;
         _accessoryView.frame = CGRectMake(0, 0, self.view.frame.size.width, 40);
         _accessoryView.actionDelegate = self;
         
-        /*
+        
          CALayer *layer = _footerView.layer;
          //背景
          layer.backgroundColor = [[UIColor whiteColor] CGColor];
@@ -250,7 +277,7 @@ typedef NS_ENUM(NSInteger, FooterOptios)
          layer.shadowOpacity = 0.70f;
          //陰影的路徑
          layer.shadowPath = [[UIBezierPath bezierPathWithRect:layer.bounds] CGPath];
-         */
+        
     }
     return _accessoryView;
 }
@@ -259,14 +286,20 @@ typedef NS_ENUM(NSInteger, FooterOptios)
 
 - (void)footerView:(ActionBFooter*)footer actionForAction:(Footer)action
 {
+    NSInteger tag = footer.tag;
     switch (action)
     {
         case FooterCamera:
             [self showActionSheet];
             break;
         case FooterPeople:
+        {
+            ActivityTableViewController *vc = [[ActivityTableViewController alloc] initWithStyle:UITableViewStylePlain];
+            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
             
+            [self presentViewController:nav animated:YES completion:nil];
             break;
+        }
         case FooterEmoji:
             [self switchCustomKeyboard];
             break;
@@ -275,6 +308,7 @@ typedef NS_ENUM(NSInteger, FooterOptios)
             break;
         case FooterClose:
             [self.textView resignFirstResponder];
+            //[self.textView performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0.3];
             break;
     }
 }
@@ -308,7 +342,7 @@ typedef NS_ENUM(NSInteger, FooterOptios)
 #pragma mark PKCameraImagePickerDelegate
 -(void)imageSelected:(UIImage*)img
 {
-    
+    //process selected image
 }
 
 -(void)imageSelectionCancelled
@@ -323,21 +357,13 @@ typedef NS_ENUM(NSInteger, FooterOptios)
 {
     [self.textView resignFirstResponder];
     self.textView.inputView = self.customKeyboard;
-    [self.textView becomeFirstResponder];
+    [self.textView performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0.3];
 }
 
 - (void)customKeyboardDoClose:(UIView *)view
 {
-    if ([view isKindOfClass:[CustomInputAccessoryView class]])
-    {
-        [self.textView resignFirstResponder];
-    }
-    else if ([view isKindOfClass:[CustomerKeyboard class]])
-    {
-        [self.textView resignFirstResponder];
-        self.textView.inputView = nil;
-        [self.textView becomeFirstResponder];
-    }
+    [self.textView resignFirstResponder];
+    self.textView.inputView = nil;
 }
 
 //TODO : 建立客製鍵盤

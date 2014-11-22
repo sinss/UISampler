@@ -11,5 +11,6 @@
 @protocol CustomKeyboardDelegate <NSObject>
 
 - (void)customKeyboardDoClose:(UIView*)view;
+- (void)pressCustomKeyboardAtIndex:(NSInteger)tag;
 
 @end

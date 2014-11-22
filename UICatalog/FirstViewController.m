@@ -9,11 +9,21 @@
 #import "FirstViewController.h"
 #import "Sample.h"
 
+#import "NSMutableDictionary+extend.h"
+/*
+ KVO, KVC
+ 
+ Key Value Path
+ NSPredicate
+ */
 @interface FirstViewController ()
 
 @property (nonatomic, strong) NSDictionary *searchDict;
-@property (nonatomic, strong) NSArray *searchArray;
 @property (nonatomic, strong) NSArray *sampleArray;
+
+
+@property (nonatomic, strong) NSArray *searchArray;
+
 
 @end
 
@@ -23,11 +33,50 @@
     [super viewDidLoad];
     
     [self createSampleData];
+    
+    [self sum];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)sum
+{
+    NSNumber *result = [self.searchArray valueForKeyPath:@"@sum.integerValue"];
+    NSArray *unions = [self.sampleArray valueForKeyPath:@"@distinctUnionOfObjects.number"];
+    
+    NSString *str = [NSString stringWithFormat:@"number = %@", [NSNumber numberWithInteger:1]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:str];
+    
+    NSArray *items = [self.sampleArray filteredArrayUsingPredicate:predicate];
+    
+    NSLog(@"search in sampleArray = %@", items);
+    
+    NSArray *numbers = [items valueForKeyPath:@"number"];
+    
+    NSLog(@"numbers = %@", numbers);
+    str = [NSString stringWithFormat:@"string = '%@'", @"1"];
+    items = [self.sampleArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:str]];
+    
+    NSString *strings = [items valueForKeyPath:@"string"];
+    NSLog(@"strings = %@", strings);
+    
+    str = [NSString stringWithFormat:@"string = '%@'", @"1"];
+    items = [[self.searchDict valueForKey:@"strings"]  filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:str]];
+    
+    NSSortDescriptor *d1 = [[NSSortDescriptor alloc] initWithKey:@"string" ascending:YES];
+    NSSortDescriptor *d2 = [[NSSortDescriptor alloc] initWithKey:@"number" ascending:NO];
+    
+    items = [self.sampleArray sortedArrayUsingDescriptors:@[d1, d2]];
+    
+    numbers = [items valueForKeyPath:@"number"];
+    strings = [items valueForKeyPath:@"string"];
+    for (Sample *item in items)
+    {
+        NSLog(@"(%@, %@)", item.string, item.number);
+    }
 }
 
 - (void)createSampleData
@@ -54,6 +103,15 @@
         
         //Dictionary
         [dict setObject:[NSNumber numberWithInteger:i % 7] forKey:@"number"];
+        [dict setIntegerValue:(i%7) forKey:@"number"];
+        
+        
+        NSInteger i = [dict integerValueForKey:@"number"];
+        if (i==NSNotFound)
+        {
+            
+        }
+        
         [dict setObject:[NSString stringWithFormat:@"%i", i % 9] forKey:@"string"];
         
         //Array
