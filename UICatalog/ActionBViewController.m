@@ -14,8 +14,11 @@
 #import "CustomerKeyboard.h"
 #import "CustomInputAccessoryView.h"
 #import "ActivityTableViewController.h"
-
+#import "LocationTableViewController.h"
 #import "PKImagePickerViewController.h"
+#import "TSAssetsPickerController.h"
+
+#import "DatabaseAdapter.h"
 
 #define cellIdenttifier @"ActionBCellIdentifier"
 #define reuseHeaderIdentifier @"reuseHeaderIdentifier"
@@ -29,13 +32,14 @@ typedef NS_ENUM(NSInteger, FooterOptios)
     FooterOptiosLocation,
 };
 
-@interface ActionBViewController () <ActionFooterDelegate, UIActionSheetDelegate, PKImagePickerViewControllerDelegate, CustomKeyboardDelegate>
+@interface ActionBViewController () <ActionFooterDelegate, UIActionSheetDelegate, PKImagePickerViewControllerDelegate, CustomKeyboardDelegate, TSAssetsPickerControllerDelegate, TSAssetsPickerControllerDataSource, UINavigationControllerDelegate>
 
 @property (nonatomic, strong) ActionAHeader *headerView;
 @property (nonatomic, strong) ActionBFooter *footerView;
 @property (nonatomic, strong) CustomerKeyboard *customKeyboard;
 @property (nonatomic, strong) ActionBFooter *accessoryView;
 @property (nonatomic, strong) UIPlaceHolderTextView *textView;
+@property (nonatomic, strong) TSAssetsPickerController *albumPicker;
 
 @end
 
@@ -43,6 +47,11 @@ typedef NS_ENUM(NSInteger, FooterOptios)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    
+    [[DatabaseAdapter shareInstance] getSpots];
+    
     
     [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
     [self createNnavigationBar];
@@ -185,6 +194,39 @@ typedef NS_ENUM(NSInteger, FooterOptios)
     
 }
 
+#pragma mark - TSAssetsPickerControllerDataSource
+- (NSUInteger)numberOfItemsToSelectInAssetsPickerController:(TSAssetsPickerController *)picker
+{
+    return 3;
+}
+
+- (TSFilter *)filterOfAssetsPickerController:(TSAssetsPickerController *)picker
+{
+    return [TSFilter filterWithType:FilterTypeAll];
+}
+
+#pragma mark - TSAssetsPickerControllerDelegate
+- (void)assetsPickerControllerDidCancel:(TSAssetsPickerController *)picker
+{
+    [_albumPicker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)assetsPickerController:(TSAssetsPickerController *)picker didFinishPickingAssets:(NSArray *)assets
+{
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [_albumPicker dismissViewControllerAnimated:YES completion:nil];
+        //[DummyAssetsImporter importAssets:assets];
+    });
+}
+
+- (void)assetsPickerController:(TSAssetsPickerController *)picker failedWithError:(NSError *)error {
+    if (error) {
+        NSLog(@"Error occurs. Show dialog or something. Probably because user blocked access to Camera Roll.");
+    }
+}
+
 - (void)createNnavigationBar
 {
     //建立一個Action Item
@@ -282,6 +324,15 @@ typedef NS_ENUM(NSInteger, FooterOptios)
     return _accessoryView;
 }
 
+- (TSAssetsPickerController*)albumPicker
+{
+    if (!_albumPicker) {
+        _albumPicker = [TSAssetsPickerController new];
+        _albumPicker.delegate = self;
+        _albumPicker.dataSource = self;
+    }
+    return _albumPicker;
+}
 #pragma mark - ActionFooterViewDelegate
 
 - (void)footerView:(ActionBFooter*)footer actionForAction:(Footer)action
@@ -336,6 +387,7 @@ typedef NS_ENUM(NSInteger, FooterOptios)
     else if (buttonIndex == 1)
     {
         //相簿
+        [self presentViewController:self.albumPicker animated:YES completion:nil];
     }
 }
 

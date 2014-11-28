@@ -13,6 +13,7 @@
 #import "customHeaderView.h"
 #import "ActionAViewController.h"
 #import "ActionBViewController.h"
+#import "LocationTableViewController.h"
 
 
 @interface ActivityViewController () <UIScrollViewDelegate, ActivityScrollDelegate, customHeaderViewAction>
@@ -153,6 +154,15 @@
     else if (action == ActionOptionsB)
     {
         ActionBViewController *vc = [[ActionBViewController alloc] initWithNibName:@"ActionBViewController" bundle:nil];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+        
+        [self presentViewController:nav animated:YES completion:^(){
+            //do something
+        }];
+    }
+    else if (action == ActionOptionsC)
+    {
+        LocationTableViewController *vc = [[LocationTableViewController alloc] initWithStyle:UITableViewStylePlain];
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
         
         [self presentViewController:nav animated:YES completion:^(){

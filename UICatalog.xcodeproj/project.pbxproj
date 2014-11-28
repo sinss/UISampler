@@ -123,6 +123,36 @@
 		0F1209031A0E0A6A0020EF9C /* x_toolbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F1208981A0E0A6A0020EF9C /* x_toolbox@2x.png */; };
 		0F1209041A0E0A6A0020EF9C /* xplorer_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F1208991A0E0A6A0020EF9C /* xplorer_image.png */; };
 		0F1209051A0E0A6A0020EF9C /* xplorer_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F12089A1A0E0A6A0020EF9C /* xplorer_image@2x.png */; };
+		0F226C3F1A28BFBC009EC47A /* AlbumRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C141A28BFBC009EC47A /* AlbumRepresentation.m */; };
+		0F226C401A28BFBC009EC47A /* TSAlbumsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C171A28BFBC009EC47A /* TSAlbumsLoader.m */; };
+		0F226C411A28BFBC009EC47A /* TSAssetsContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C191A28BFBC009EC47A /* TSAssetsContainer.m */; };
+		0F226C421A28BFBC009EC47A /* TSAssetsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C1B1A28BFBC009EC47A /* TSAssetsLoader.m */; };
+		0F226C431A28BFBC009EC47A /* TSAssetsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C1D1A28BFBC009EC47A /* TSAssetsManager.m */; };
+		0F226C441A28BFBC009EC47A /* TSBaseLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C1F1A28BFBC009EC47A /* TSBaseLoader.m */; };
+		0F226C451A28BFBC009EC47A /* TSFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C211A28BFBC009EC47A /* TSFilter.m */; };
+		0F226C461A28BFBC009EC47A /* TSSizeComparator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C231A28BFBC009EC47A /* TSSizeComparator.m */; };
+		0F226C471A28BFBC009EC47A /* TSSizePredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C251A28BFBC009EC47A /* TSSizePredicate.m */; };
+		0F226C481A28BFBC009EC47A /* TSAlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C291A28BFBC009EC47A /* TSAlbumsViewController.m */; };
+		0F226C491A28BFBC009EC47A /* TSAssetsPickerController+Internals.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C2B1A28BFBC009EC47A /* TSAssetsPickerController+Internals.m */; };
+		0F226C4A1A28BFBC009EC47A /* TSAssetsPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C2D1A28BFBC009EC47A /* TSAssetsPickerController.m */; };
+		0F226C4B1A28BFBC009EC47A /* TSAssetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C2F1A28BFBC009EC47A /* TSAssetsViewController.m */; };
+		0F226C4C1A28BFBC009EC47A /* AlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C331A28BFBC009EC47A /* AlbumCell.m */; };
+		0F226C4D1A28BFBC009EC47A /* AlbumsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C351A28BFBC009EC47A /* AlbumsTableView.m */; };
+		0F226C4E1A28BFBC009EC47A /* NoAlbumsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C371A28BFBC009EC47A /* NoAlbumsCell.m */; };
+		0F226C4F1A28BFBC009EC47A /* AssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C3A1A28BFBC009EC47A /* AssetCell.m */; };
+		0F226C501A28BFBC009EC47A /* AssetsCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C3C1A28BFBC009EC47A /* AssetsCollectionView.m */; };
+		0F226C511A28BFBC009EC47A /* AssetsCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C3E1A28BFBC009EC47A /* AssetsCollectionViewLayout.m */; };
+		0F226C621A28C636009EC47A /* FMDatabase+InMemoryOnDiskIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C551A28C636009EC47A /* FMDatabase+InMemoryOnDiskIO.m */; };
+		0F226C631A28C636009EC47A /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C581A28C636009EC47A /* FMDatabase.m */; };
+		0F226C641A28C636009EC47A /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C5A1A28C636009EC47A /* FMDatabaseAdditions.m */; };
+		0F226C651A28C636009EC47A /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C5C1A28C636009EC47A /* FMDatabasePool.m */; };
+		0F226C661A28C636009EC47A /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C5E1A28C636009EC47A /* FMDatabaseQueue.m */; };
+		0F226C681A28C636009EC47A /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C611A28C636009EC47A /* FMResultSet.m */; };
+		0F226C6B1A28C66D009EC47A /* DBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C6A1A28C66D009EC47A /* DBHelper.m */; };
+		0F226C6E1A28C977009EC47A /* DatabaseAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C6D1A28C977009EC47A /* DatabaseAdapter.m */; };
+		0F226C701A28CA1A009EC47A /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0F226C6F1A28CA1A009EC47A /* db.sqlite */; };
+		0F226C721A28CAFE009EC47A /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F226C711A28CAFE009EC47A /* libsqlite3.0.dylib */; };
+		0F226C751A28CD16009EC47A /* LocationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C741A28CD16009EC47A /* LocationTableViewController.m */; };
 		0FC9E68C1A2079570038A742 /* NSMutableDictionary+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC9E68B1A2079570038A742 /* NSMutableDictionary+extend.m */; };
 		0FC9E68F1A207ADF0038A742 /* NSString+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC9E68E1A207ADF0038A742 /* NSString+extend.m */; };
 		0FDFDDFF19FB80C0004AE6E1 /* CustomSearchBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FDFDDFE19FB80C0004AE6E1 /* CustomSearchBar.xib */; };
@@ -297,6 +327,67 @@
 		0F1208981A0E0A6A0020EF9C /* x_toolbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "x_toolbox@2x.png"; sourceTree = "<group>"; };
 		0F1208991A0E0A6A0020EF9C /* xplorer_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xplorer_image.png; sourceTree = "<group>"; };
 		0F12089A1A0E0A6A0020EF9C /* xplorer_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xplorer_image@2x.png"; sourceTree = "<group>"; };
+		0F226C131A28BFBC009EC47A /* AlbumRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumRepresentation.h; sourceTree = "<group>"; };
+		0F226C141A28BFBC009EC47A /* AlbumRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumRepresentation.m; sourceTree = "<group>"; };
+		0F226C151A28BFBC009EC47A /* SystemVersionMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemVersionMacros.h; sourceTree = "<group>"; };
+		0F226C161A28BFBC009EC47A /* TSAlbumsLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAlbumsLoader.h; sourceTree = "<group>"; };
+		0F226C171A28BFBC009EC47A /* TSAlbumsLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSAlbumsLoader.m; sourceTree = "<group>"; };
+		0F226C181A28BFBC009EC47A /* TSAssetsContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAssetsContainer.h; sourceTree = "<group>"; };
+		0F226C191A28BFBC009EC47A /* TSAssetsContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSAssetsContainer.m; sourceTree = "<group>"; };
+		0F226C1A1A28BFBC009EC47A /* TSAssetsLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAssetsLoader.h; sourceTree = "<group>"; };
+		0F226C1B1A28BFBC009EC47A /* TSAssetsLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSAssetsLoader.m; sourceTree = "<group>"; };
+		0F226C1C1A28BFBC009EC47A /* TSAssetsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAssetsManager.h; sourceTree = "<group>"; };
+		0F226C1D1A28BFBC009EC47A /* TSAssetsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSAssetsManager.m; sourceTree = "<group>"; };
+		0F226C1E1A28BFBC009EC47A /* TSBaseLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSBaseLoader.h; sourceTree = "<group>"; };
+		0F226C1F1A28BFBC009EC47A /* TSBaseLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSBaseLoader.m; sourceTree = "<group>"; };
+		0F226C201A28BFBC009EC47A /* TSFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSFilter.h; sourceTree = "<group>"; };
+		0F226C211A28BFBC009EC47A /* TSFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSFilter.m; sourceTree = "<group>"; };
+		0F226C221A28BFBC009EC47A /* TSSizeComparator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSSizeComparator.h; sourceTree = "<group>"; };
+		0F226C231A28BFBC009EC47A /* TSSizeComparator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSSizeComparator.m; sourceTree = "<group>"; };
+		0F226C241A28BFBC009EC47A /* TSSizePredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSSizePredicate.h; sourceTree = "<group>"; };
+		0F226C251A28BFBC009EC47A /* TSSizePredicate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSSizePredicate.m; sourceTree = "<group>"; };
+		0F226C271A28BFBC009EC47A /* DeviceTypesMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceTypesMacros.h; sourceTree = "<group>"; };
+		0F226C281A28BFBC009EC47A /* TSAlbumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAlbumsViewController.h; sourceTree = "<group>"; };
+		0F226C291A28BFBC009EC47A /* TSAlbumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSAlbumsViewController.m; sourceTree = "<group>"; };
+		0F226C2A1A28BFBC009EC47A /* TSAssetsPickerController+Internals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TSAssetsPickerController+Internals.h"; sourceTree = "<group>"; };
+		0F226C2B1A28BFBC009EC47A /* TSAssetsPickerController+Internals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TSAssetsPickerController+Internals.m"; sourceTree = "<group>"; };
+		0F226C2C1A28BFBC009EC47A /* TSAssetsPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAssetsPickerController.h; sourceTree = "<group>"; };
+		0F226C2D1A28BFBC009EC47A /* TSAssetsPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSAssetsPickerController.m; sourceTree = "<group>"; };
+		0F226C2E1A28BFBC009EC47A /* TSAssetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAssetsViewController.h; sourceTree = "<group>"; };
+		0F226C2F1A28BFBC009EC47A /* TSAssetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSAssetsViewController.m; sourceTree = "<group>"; };
+		0F226C321A28BFBC009EC47A /* AlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumCell.h; sourceTree = "<group>"; };
+		0F226C331A28BFBC009EC47A /* AlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumCell.m; sourceTree = "<group>"; };
+		0F226C341A28BFBC009EC47A /* AlbumsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumsTableView.h; sourceTree = "<group>"; };
+		0F226C351A28BFBC009EC47A /* AlbumsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsTableView.m; sourceTree = "<group>"; };
+		0F226C361A28BFBC009EC47A /* NoAlbumsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoAlbumsCell.h; sourceTree = "<group>"; };
+		0F226C371A28BFBC009EC47A /* NoAlbumsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoAlbumsCell.m; sourceTree = "<group>"; };
+		0F226C391A28BFBC009EC47A /* AssetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetCell.h; sourceTree = "<group>"; };
+		0F226C3A1A28BFBC009EC47A /* AssetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetCell.m; sourceTree = "<group>"; };
+		0F226C3B1A28BFBC009EC47A /* AssetsCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetsCollectionView.h; sourceTree = "<group>"; };
+		0F226C3C1A28BFBC009EC47A /* AssetsCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetsCollectionView.m; sourceTree = "<group>"; };
+		0F226C3D1A28BFBC009EC47A /* AssetsCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetsCollectionViewLayout.h; sourceTree = "<group>"; };
+		0F226C3E1A28BFBC009EC47A /* AssetsCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetsCollectionViewLayout.m; sourceTree = "<group>"; };
+		0F226C541A28C636009EC47A /* FMDatabase+InMemoryOnDiskIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMDatabase+InMemoryOnDiskIO.h"; sourceTree = "<group>"; };
+		0F226C551A28C636009EC47A /* FMDatabase+InMemoryOnDiskIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMDatabase+InMemoryOnDiskIO.m"; sourceTree = "<group>"; };
+		0F226C571A28C636009EC47A /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		0F226C581A28C636009EC47A /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		0F226C591A28C636009EC47A /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		0F226C5A1A28C636009EC47A /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		0F226C5B1A28C636009EC47A /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		0F226C5C1A28C636009EC47A /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		0F226C5D1A28C636009EC47A /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		0F226C5E1A28C636009EC47A /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		0F226C5F1A28C636009EC47A /* fmdb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fmdb.m; sourceTree = "<group>"; };
+		0F226C601A28C636009EC47A /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		0F226C611A28C636009EC47A /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		0F226C691A28C66D009EC47A /* DBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBHelper.h; sourceTree = "<group>"; };
+		0F226C6A1A28C66D009EC47A /* DBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBHelper.m; sourceTree = "<group>"; };
+		0F226C6C1A28C977009EC47A /* DatabaseAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseAdapter.h; sourceTree = "<group>"; };
+		0F226C6D1A28C977009EC47A /* DatabaseAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseAdapter.m; sourceTree = "<group>"; };
+		0F226C6F1A28CA1A009EC47A /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
+		0F226C711A28CAFE009EC47A /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		0F226C731A28CD16009EC47A /* LocationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTableViewController.h; sourceTree = "<group>"; };
+		0F226C741A28CD16009EC47A /* LocationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTableViewController.m; sourceTree = "<group>"; };
 		0FC9E68A1A2079570038A742 /* NSMutableDictionary+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+extend.h"; sourceTree = "<group>"; };
 		0FC9E68B1A2079570038A742 /* NSMutableDictionary+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+extend.m"; sourceTree = "<group>"; };
 		0FC9E68D1A207ADF0038A742 /* NSString+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+extend.h"; sourceTree = "<group>"; };
@@ -371,6 +462,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F226C721A28CAFE009EC47A /* libsqlite3.0.dylib in Frameworks */,
 				B3DE84181A0DC257006A0857 /* Foundation.framework in Frameworks */,
 				B3DE84161A0DC251006A0857 /* UIKit.framework in Frameworks */,
 				B3DE84141A0DC249006A0857 /* CoreGraphics.framework in Frameworks */,
@@ -517,6 +609,130 @@
 			path = xplorer;
 			sourceTree = "<group>";
 		};
+		0F226C111A28BFBC009EC47A /* TSAssetsPicker */ = {
+			isa = PBXGroup;
+			children = (
+				0F226C121A28BFBC009EC47A /* API Classes */,
+				0F226C261A28BFBC009EC47A /* Controllers */,
+				0F226C301A28BFBC009EC47A /* Customizable Classes */,
+			);
+			path = TSAssetsPicker;
+			sourceTree = "<group>";
+		};
+		0F226C121A28BFBC009EC47A /* API Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0F226C131A28BFBC009EC47A /* AlbumRepresentation.h */,
+				0F226C141A28BFBC009EC47A /* AlbumRepresentation.m */,
+				0F226C151A28BFBC009EC47A /* SystemVersionMacros.h */,
+				0F226C161A28BFBC009EC47A /* TSAlbumsLoader.h */,
+				0F226C171A28BFBC009EC47A /* TSAlbumsLoader.m */,
+				0F226C181A28BFBC009EC47A /* TSAssetsContainer.h */,
+				0F226C191A28BFBC009EC47A /* TSAssetsContainer.m */,
+				0F226C1A1A28BFBC009EC47A /* TSAssetsLoader.h */,
+				0F226C1B1A28BFBC009EC47A /* TSAssetsLoader.m */,
+				0F226C1C1A28BFBC009EC47A /* TSAssetsManager.h */,
+				0F226C1D1A28BFBC009EC47A /* TSAssetsManager.m */,
+				0F226C1E1A28BFBC009EC47A /* TSBaseLoader.h */,
+				0F226C1F1A28BFBC009EC47A /* TSBaseLoader.m */,
+				0F226C201A28BFBC009EC47A /* TSFilter.h */,
+				0F226C211A28BFBC009EC47A /* TSFilter.m */,
+				0F226C221A28BFBC009EC47A /* TSSizeComparator.h */,
+				0F226C231A28BFBC009EC47A /* TSSizeComparator.m */,
+				0F226C241A28BFBC009EC47A /* TSSizePredicate.h */,
+				0F226C251A28BFBC009EC47A /* TSSizePredicate.m */,
+			);
+			path = "API Classes";
+			sourceTree = "<group>";
+		};
+		0F226C261A28BFBC009EC47A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F226C271A28BFBC009EC47A /* DeviceTypesMacros.h */,
+				0F226C281A28BFBC009EC47A /* TSAlbumsViewController.h */,
+				0F226C291A28BFBC009EC47A /* TSAlbumsViewController.m */,
+				0F226C2A1A28BFBC009EC47A /* TSAssetsPickerController+Internals.h */,
+				0F226C2B1A28BFBC009EC47A /* TSAssetsPickerController+Internals.m */,
+				0F226C2C1A28BFBC009EC47A /* TSAssetsPickerController.h */,
+				0F226C2D1A28BFBC009EC47A /* TSAssetsPickerController.m */,
+				0F226C2E1A28BFBC009EC47A /* TSAssetsViewController.h */,
+				0F226C2F1A28BFBC009EC47A /* TSAssetsViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0F226C301A28BFBC009EC47A /* Customizable Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0F226C311A28BFBC009EC47A /* Albums View */,
+				0F226C381A28BFBC009EC47A /* Assets View */,
+			);
+			path = "Customizable Classes";
+			sourceTree = "<group>";
+		};
+		0F226C311A28BFBC009EC47A /* Albums View */ = {
+			isa = PBXGroup;
+			children = (
+				0F226C321A28BFBC009EC47A /* AlbumCell.h */,
+				0F226C331A28BFBC009EC47A /* AlbumCell.m */,
+				0F226C341A28BFBC009EC47A /* AlbumsTableView.h */,
+				0F226C351A28BFBC009EC47A /* AlbumsTableView.m */,
+				0F226C361A28BFBC009EC47A /* NoAlbumsCell.h */,
+				0F226C371A28BFBC009EC47A /* NoAlbumsCell.m */,
+			);
+			path = "Albums View";
+			sourceTree = "<group>";
+		};
+		0F226C381A28BFBC009EC47A /* Assets View */ = {
+			isa = PBXGroup;
+			children = (
+				0F226C391A28BFBC009EC47A /* AssetCell.h */,
+				0F226C3A1A28BFBC009EC47A /* AssetCell.m */,
+				0F226C3B1A28BFBC009EC47A /* AssetsCollectionView.h */,
+				0F226C3C1A28BFBC009EC47A /* AssetsCollectionView.m */,
+				0F226C3D1A28BFBC009EC47A /* AssetsCollectionViewLayout.h */,
+				0F226C3E1A28BFBC009EC47A /* AssetsCollectionViewLayout.m */,
+			);
+			path = "Assets View";
+			sourceTree = "<group>";
+		};
+		0F226C521A28C636009EC47A /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				0F226C6F1A28CA1A009EC47A /* db.sqlite */,
+				0F226C531A28C636009EC47A /* extra */,
+				0F226C561A28C636009EC47A /* src */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		0F226C531A28C636009EC47A /* extra */ = {
+			isa = PBXGroup;
+			children = (
+				0F226C541A28C636009EC47A /* FMDatabase+InMemoryOnDiskIO.h */,
+				0F226C551A28C636009EC47A /* FMDatabase+InMemoryOnDiskIO.m */,
+			);
+			path = extra;
+			sourceTree = "<group>";
+		};
+		0F226C561A28C636009EC47A /* src */ = {
+			isa = PBXGroup;
+			children = (
+				0F226C571A28C636009EC47A /* FMDatabase.h */,
+				0F226C581A28C636009EC47A /* FMDatabase.m */,
+				0F226C591A28C636009EC47A /* FMDatabaseAdditions.h */,
+				0F226C5A1A28C636009EC47A /* FMDatabaseAdditions.m */,
+				0F226C5B1A28C636009EC47A /* FMDatabasePool.h */,
+				0F226C5C1A28C636009EC47A /* FMDatabasePool.m */,
+				0F226C5D1A28C636009EC47A /* FMDatabaseQueue.h */,
+				0F226C5E1A28C636009EC47A /* FMDatabaseQueue.m */,
+				0F226C5F1A28C636009EC47A /* fmdb.m */,
+				0F226C601A28C636009EC47A /* FMResultSet.h */,
+				0F226C611A28C636009EC47A /* FMResultSet.m */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		0FDFDDFD19FB8075004AE6E1 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -581,6 +797,10 @@
 				0FC9E68B1A2079570038A742 /* NSMutableDictionary+extend.m */,
 				0FC9E68D1A207ADF0038A742 /* NSString+extend.h */,
 				0FC9E68E1A207ADF0038A742 /* NSString+extend.m */,
+				0F226C691A28C66D009EC47A /* DBHelper.h */,
+				0F226C6A1A28C66D009EC47A /* DBHelper.m */,
+				0F226C6C1A28C977009EC47A /* DatabaseAdapter.h */,
+				0F226C6D1A28C977009EC47A /* DatabaseAdapter.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -597,6 +817,8 @@
 		B35AB33919FA970B0063034C = {
 			isa = PBXGroup;
 			children = (
+				0F226C711A28CAFE009EC47A /* libsqlite3.0.dylib */,
+				0F226C521A28C636009EC47A /* FMDB */,
 				0F12082D1A0E0A6A0020EF9C /* images */,
 				B3DE84171A0DC257006A0857 /* Foundation.framework */,
 				B3DE84151A0DC251006A0857 /* UIKit.framework */,
@@ -678,6 +900,8 @@
 				0F1208231A0E07590020EF9C /* ActionBViewController.h */,
 				0F1208241A0E07590020EF9C /* ActionBViewController.m */,
 				0F1208251A0E07590020EF9C /* ActionBViewController.xib */,
+				0F226C731A28CD16009EC47A /* LocationTableViewController.h */,
+				0F226C741A28CD16009EC47A /* LocationTableViewController.m */,
 			);
 			name = Activity;
 			sourceTree = "<group>";
@@ -685,6 +909,7 @@
 		B3DE83D91A0DC17C006A0857 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				0F226C111A28BFBC009EC47A /* TSAssetsPicker */,
 				B310EB8F1A1FA35000129856 /* PKImageBundle.bundle */,
 				B310EB8C1A1FA21C00129856 /* PKImagePickerViewController.h */,
 				B310EB8D1A1FA21C00129856 /* PKImagePickerViewController.m */,
@@ -816,6 +1041,7 @@
 				0F1208D01A0E0A6A0020EF9C /* connect_offline@2x.png in Resources */,
 				0F1208EE1A0E0A6A0020EF9C /* item_check_white@2x.png in Resources */,
 				0F1208F21A0E0A6A0020EF9C /* movie_icon@2x.png in Resources */,
+				0F226C701A28CA1A009EC47A /* db.sqlite in Resources */,
 				0F1208F61A0E0A6A0020EF9C /* path_header@2x.png in Resources */,
 				0F1208C01A0E0A6A0020EF9C /* act_play@2x.png in Resources */,
 				0F1208DF1A0E0A6A0020EF9C /* file_video@2x.png in Resources */,
@@ -916,32 +1142,60 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F1208161A0DF93A0020EF9C /* ActionAViewController.m in Sources */,
+				0F226C621A28C636009EC47A /* FMDatabase+InMemoryOnDiskIO.m in Sources */,
+				0F226C481A28BFBC009EC47A /* TSAlbumsViewController.m in Sources */,
+				0F226C431A28BFBC009EC47A /* TSAssetsManager.m in Sources */,
 				0FF693BA1A04C1140028E02F /* customHeaderView.m in Sources */,
+				0F226C471A28BFBC009EC47A /* TSSizePredicate.m in Sources */,
 				B310EB8B1A1F96AF00129856 /* UIPlaceHolderTextView.m in Sources */,
+				0F226C451A28BFBC009EC47A /* TSFilter.m in Sources */,
 				0FC9E68C1A2079570038A742 /* NSMutableDictionary+extend.m in Sources */,
+				0F226C3F1A28BFBC009EC47A /* AlbumRepresentation.m in Sources */,
 				B35AB35119FA970B0063034C /* SecondViewController.m in Sources */,
 				0F12082B1A0E080C0020EF9C /* ActionBCell.m in Sources */,
+				0F226C681A28C636009EC47A /* FMResultSet.m in Sources */,
+				0F226C641A28C636009EC47A /* FMDatabaseAdditions.m in Sources */,
+				0F226C4A1A28BFBC009EC47A /* TSAssetsPickerController.m in Sources */,
+				0F226C661A28C636009EC47A /* FMDatabaseQueue.m in Sources */,
 				B310EB931A1FA42F00129856 /* CustomerKeyboard.m in Sources */,
+				0F226C6E1A28C977009EC47A /* DatabaseAdapter.m in Sources */,
+				0F226C6B1A28C66D009EC47A /* DBHelper.m in Sources */,
+				0F226C511A28BFBC009EC47A /* AssetsCollectionViewLayout.m in Sources */,
+				0F226C631A28C636009EC47A /* FMDatabase.m in Sources */,
 				0F1208261A0E07590020EF9C /* ActionBViewController.m in Sources */,
+				0F226C4E1A28BFBC009EC47A /* NoAlbumsCell.m in Sources */,
 				B305B1061A0286C600F21F95 /* NonARCViewController.m in Sources */,
+				0F226C4D1A28BFBC009EC47A /* AlbumsTableView.m in Sources */,
 				0FC9E68F1A207ADF0038A742 /* NSString+extend.m in Sources */,
+				0F226C4F1A28BFBC009EC47A /* AssetCell.m in Sources */,
 				B310EB8E1A1FA21C00129856 /* PKImagePickerViewController.m in Sources */,
 				B3DE84201A0FC130006A0857 /* ActionAHeader.m in Sources */,
 				B35AB34B19FA970B0063034C /* AppDelegate.m in Sources */,
+				0F226C421A28BFBC009EC47A /* TSAssetsLoader.m in Sources */,
 				0F1208211A0DFCCC0020EF9C /* SearchMarkCell.m in Sources */,
+				0F226C461A28BFBC009EC47A /* TSSizeComparator.m in Sources */,
+				0F226C751A28CD16009EC47A /* LocationTableViewController.m in Sources */,
 				B35AB37119FA9C020063034C /* ActivityTableViewController.m in Sources */,
+				0F226C441A28BFBC009EC47A /* TSBaseLoader.m in Sources */,
 				B3DE84231A0FC147006A0857 /* ActionBFooter.m in Sources */,
 				B35AB34E19FA970B0063034C /* FirstViewController.m in Sources */,
 				B310EB981A1FA87600129856 /* CustomInputAccessoryView.m in Sources */,
+				0F226C491A28BFBC009EC47A /* TSAssetsPickerController+Internals.m in Sources */,
+				0F226C501A28BFBC009EC47A /* AssetsCollectionView.m in Sources */,
+				0F226C411A28BFBC009EC47A /* TSAssetsContainer.m in Sources */,
+				0F226C651A28C636009EC47A /* FMDatabasePool.m in Sources */,
 				0FF693B71A04B6C00028E02F /* ActivityTableSource.m in Sources */,
 				0FDFDE0619FB9556004AE6E1 /* CustomCell.m in Sources */,
 				B305B10A1A028A6500F21F95 /* singleton.m in Sources */,
+				0F226C401A28BFBC009EC47A /* TSAlbumsLoader.m in Sources */,
 				B3DE841B1A0FBE10006A0857 /* ActionBCell2.m in Sources */,
 				0FDFDE0219FB8391004AE6E1 /* CustomSearchBar.m in Sources */,
 				B35AB34819FA970B0063034C /* main.m in Sources */,
+				0F226C4B1A28BFBC009EC47A /* TSAssetsViewController.m in Sources */,
 				B310EB9E1A204E4B00129856 /* Sample.m in Sources */,
 				0FF693B41A04B6320028E02F /* ActivityViewController.m in Sources */,
 				B3027E311A0DBDA3008D3C28 /* LocationManager.m in Sources */,
+				0F226C4C1A28BFBC009EC47A /* AlbumCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1075,6 +1329,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = UICatalog/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1088,6 +1343,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = UICatalog/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
