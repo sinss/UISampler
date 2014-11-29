@@ -17,10 +17,13 @@
 #import "LocationTableViewController.h"
 #import "PKImagePickerViewController.h"
 #import "TSAssetsPickerController.h"
+#import "DummyAssetsImporter.h"
 
 #import "DatabaseAdapter.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 
 #define cellIdenttifier @"ActionBCellIdentifier"
+#define imageCellIdentifier @"imageCellIdentifier"
 #define reuseHeaderIdentifier @"reuseHeaderIdentifier"
 #define reuseFooterIdentifier @"reuseFooterIdentifier"
 
@@ -41,6 +44,8 @@ typedef NS_ENUM(NSInteger, FooterOptios)
 @property (nonatomic, strong) UIPlaceHolderTextView *textView;
 @property (nonatomic, strong) TSAssetsPickerController *albumPicker;
 
+@property (nonatomic, strong) NSMutableArray *selectedAssets;
+
 @end
 
 @implementation ActionBViewController
@@ -48,10 +53,7 @@ typedef NS_ENUM(NSInteger, FooterOptios)
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    
-    [[DatabaseAdapter shareInstance] getSpots];
-    
+    self.selectedAssets = [NSMutableArray array];
     
     [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
     [self createNnavigationBar];
@@ -113,13 +115,15 @@ typedef NS_ENUM(NSInteger, FooterOptios)
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 1;
+    return 1 + self.selectedAssets.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //Cell高度需要扣掉上方Navigationbar & footerView & headerView的高度
-    return self.view.frame.size.height - 80 - 64;
+    if (indexPath.row == 0)
+        return self.view.frame.size.height - 80 - 64;
+    return 50;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -144,14 +148,30 @@ typedef NS_ENUM(NSInteger, FooterOptios)
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ActionBCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdenttifier forIndexPath:indexPath];
-    
-    self.textView = cell.contentTextView;
-    self.textView.inputAccessoryView = self.accessoryView;
-    
-    [cell.contentTextView setPlaceholder:[NSString stringWithFormat:@"在想些什麼？"]];
-    
-    return cell;
+    if (indexPath.row == 0)
+    {
+        ActionBCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdenttifier forIndexPath:indexPath];
+        
+        self.textView = cell.contentTextView;
+        self.textView.inputAccessoryView = self.accessoryView;
+        
+        [cell.contentTextView setPlaceholder:[NSString stringWithFormat:@"在想些什麼？"]];
+        
+        return cell;
+    }
+    else
+    {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:imageCellIdentifier];
+        if (!cell)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:imageCellIdentifier];
+        }
+        
+        [cell.imageView setImage:self.selectedAssets[indexPath.row - 1]];
+        [cell.textLabel setText:[NSString stringWithFormat:@"Photo %li", (indexPath.row)]];
+        
+        return cell;
+    }
 }
 
 
@@ -208,17 +228,19 @@ typedef NS_ENUM(NSInteger, FooterOptios)
 #pragma mark - TSAssetsPickerControllerDelegate
 - (void)assetsPickerControllerDidCancel:(TSAssetsPickerController *)picker
 {
-    [_albumPicker dismissViewControllerAnimated:YES completion:nil];
+    [self.albumPicker dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)assetsPickerController:(TSAssetsPickerController *)picker didFinishPickingAssets:(NSArray *)assets
 {
-    double delayInSeconds = 2.0;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [_albumPicker dismissViewControllerAnimated:YES completion:nil];
-        //[DummyAssetsImporter importAssets:assets];
-    });
+    [self.albumPicker dismissViewControllerAnimated:YES completion:nil];
+    //[DummyAssetsImporter importAssets:assets];
+    for (ALAsset *asset in assets)
+    {
+        [self.selectedAssets addObject:[UIImage imageWithCGImage:[asset aspectRatioThumbnail]]];
+    }
+    
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 - (void)assetsPickerController:(TSAssetsPickerController *)picker failedWithError:(NSError *)error {
@@ -416,6 +438,11 @@ typedef NS_ENUM(NSInteger, FooterOptios)
 {
     [self.textView resignFirstResponder];
     self.textView.inputView = nil;
+}
+
+- (void)pressCustomKeyboardAtIndex:(NSInteger)tag
+{
+    
 }
 
 //TODO : 建立客製鍵盤
