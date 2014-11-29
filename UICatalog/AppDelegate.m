@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "LocationManager.h"
 
+#import "DBHelper.h"
+#import "OpreationSample.h"
+
 @interface AppDelegate ()
 
 @end
@@ -24,6 +27,8 @@
     [[LocationManager sharedInstance] startUpdatingLocation];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"AAAAAAAA" object:@{}];
+    
+    [[OpreationSample alloc] init];
     
     return YES;
 }

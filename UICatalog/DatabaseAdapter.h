@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^QueryFinish) (BOOL success, NSArray *result);
+
 @interface DatabaseAdapter : NSObject
 
 + (DatabaseAdapter*)shareInstance;
 
-- (void)getSpots;
+- (NSArray*)getSpots;
+
+- (void)getSpotsCompletion:(QueryFinish)completion;
 
 @end

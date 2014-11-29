@@ -159,6 +159,8 @@
 		0F226C861A297F65009EC47A /* DummyAssetsCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C7E1A297F65009EC47A /* DummyAssetsCollectionView.m */; };
 		0F226C871A297F65009EC47A /* DummyAssetsImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C801A297F65009EC47A /* DummyAssetsImporter.m */; };
 		0F226C881A297F65009EC47A /* DummyNoAlbumsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C821A297F65009EC47A /* DummyNoAlbumsCell.m */; };
+		0F8D3F351A29B63700C2083A /* OpreationSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8D3F341A29B63700C2083A /* OpreationSample.m */; };
+		0F8D3F381A29B85700C2083A /* ComplexityWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8D3F371A29B85700C2083A /* ComplexityWork.m */; };
 		0FC9E68C1A2079570038A742 /* NSMutableDictionary+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC9E68B1A2079570038A742 /* NSMutableDictionary+extend.m */; };
 		0FC9E68F1A207ADF0038A742 /* NSString+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC9E68E1A207ADF0038A742 /* NSString+extend.m */; };
 		0FDFDDFF19FB80C0004AE6E1 /* CustomSearchBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FDFDDFE19FB80C0004AE6E1 /* CustomSearchBar.xib */; };
@@ -406,6 +408,10 @@
 		0F226C801A297F65009EC47A /* DummyAssetsImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyAssetsImporter.m; sourceTree = "<group>"; };
 		0F226C811A297F65009EC47A /* DummyNoAlbumsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyNoAlbumsCell.h; sourceTree = "<group>"; };
 		0F226C821A297F65009EC47A /* DummyNoAlbumsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyNoAlbumsCell.m; sourceTree = "<group>"; };
+		0F8D3F331A29B63700C2083A /* OpreationSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpreationSample.h; sourceTree = "<group>"; };
+		0F8D3F341A29B63700C2083A /* OpreationSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpreationSample.m; sourceTree = "<group>"; };
+		0F8D3F361A29B85700C2083A /* ComplexityWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplexityWork.h; sourceTree = "<group>"; };
+		0F8D3F371A29B85700C2083A /* ComplexityWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplexityWork.m; sourceTree = "<group>"; };
 		0FC9E68A1A2079570038A742 /* NSMutableDictionary+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+extend.h"; sourceTree = "<group>"; };
 		0FC9E68B1A2079570038A742 /* NSMutableDictionary+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+extend.m"; sourceTree = "<group>"; };
 		0FC9E68D1A207ADF0038A742 /* NSString+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+extend.h"; sourceTree = "<group>"; };
@@ -839,6 +845,10 @@
 				0F226C6A1A28C66D009EC47A /* DBHelper.m */,
 				0F226C6C1A28C977009EC47A /* DatabaseAdapter.h */,
 				0F226C6D1A28C977009EC47A /* DatabaseAdapter.m */,
+				0F8D3F331A29B63700C2083A /* OpreationSample.h */,
+				0F8D3F341A29B63700C2083A /* OpreationSample.m */,
+				0F8D3F361A29B85700C2083A /* ComplexityWork.h */,
+				0F8D3F371A29B85700C2083A /* ComplexityWork.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1191,6 +1201,7 @@
 				B310EB8B1A1F96AF00129856 /* UIPlaceHolderTextView.m in Sources */,
 				0F226C451A28BFBC009EC47A /* TSFilter.m in Sources */,
 				0FC9E68C1A2079570038A742 /* NSMutableDictionary+extend.m in Sources */,
+				0F8D3F381A29B85700C2083A /* ComplexityWork.m in Sources */,
 				0F226C3F1A28BFBC009EC47A /* AlbumRepresentation.m in Sources */,
 				B35AB35119FA970B0063034C /* SecondViewController.m in Sources */,
 				0F12082B1A0E080C0020EF9C /* ActionBCell.m in Sources */,
@@ -1210,6 +1221,7 @@
 				0F226C4D1A28BFBC009EC47A /* AlbumsTableView.m in Sources */,
 				0FC9E68F1A207ADF0038A742 /* NSString+extend.m in Sources */,
 				0F226C4F1A28BFBC009EC47A /* AssetCell.m in Sources */,
+				0F8D3F351A29B63700C2083A /* OpreationSample.m in Sources */,
 				B310EB8E1A1FA21C00129856 /* PKImagePickerViewController.m in Sources */,
 				B3DE84201A0FC130006A0857 /* ActionAHeader.m in Sources */,
 				B35AB34B19FA970B0063034C /* AppDelegate.m in Sources */,

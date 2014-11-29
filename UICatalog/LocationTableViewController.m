@@ -7,10 +7,11 @@
 //
 
 #import "LocationTableViewController.h"
+#import "DatabaseAdapter.h"
 
 @interface LocationTableViewController ()
 
-
+@property (nonatomic, strong) NSArray *spots;
 
 @end
 
@@ -26,6 +27,17 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [[DatabaseAdapter shareInstance] getSpotsCompletion:^(BOOL success, NSArray *items){
+        self.spots = items;
+        
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -36,24 +48,30 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return self.spots.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellIdentifier"];
     
+    if (!cell)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cellIdentifier"];
+    }
+    
+    cell.textLabel.text = self.spots[indexPath.row];
     // Configure the cell...
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

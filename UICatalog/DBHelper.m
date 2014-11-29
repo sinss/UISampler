@@ -13,6 +13,7 @@
 + (FMDatabase*)dbInstanceInBundle
 {
     {
+        //取得Main bundle底下的路徑
         NSString *dbPath = [[NSBundle mainBundle] pathForResource:@"db" ofType:@"sqlite"];
         
         //create singleton object
@@ -70,6 +71,10 @@
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *fullPath = [documentsDirectory stringByAppendingPathComponent:fileName];
     fullPath = [fullPath stringByAppendingPathExtension:ext];
+    
+#warning 千萬不要用這方式建立檔案路徑
+    NSString *tmp = [NSString stringWithFormat:@"%@/%@", fileName, ext];
+    
     return fullPath;
 }
 

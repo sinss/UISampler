@@ -51,6 +51,12 @@
     [self.tableView reloadData];
     
     self.tableView.tableHeaderView = self.tableviewHeader;
+    
+    /*
+     最簡單的背景執行動作
+     */
+    [self performSelectorInBackground:@selector(doComplexityWork) withObject:nil];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -188,6 +194,11 @@
         _tableviewHeader.delegate = self;
     }
     return _tableviewHeader;
+}
+
+- (void)doComplexityWork
+{
+    NSLog(@"XXXXX");
 }
 
 @end
