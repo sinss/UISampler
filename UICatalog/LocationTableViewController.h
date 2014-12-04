@@ -8,6 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol LocationTableViewDelegate;
 @interface LocationTableViewController : UITableViewController
+
+@property (nonatomic, weak) id <LocationTableViewDelegate> delegate;
+
+@end
+
+
+@protocol LocationTableViewDelegate <NSObject>
+
+@required
+- (BOOL)shouldSelectEnable;
+
+@optional
+- (void)didSelectItems:(NSArray*)selectedItems;
 
 @end

@@ -16,7 +16,7 @@
 #import "LocationTableViewController.h"
 
 
-@interface ActivityViewController () <UIScrollViewDelegate, ActivityScrollDelegate, customHeaderViewAction>
+@interface ActivityViewController () <UIScrollViewDelegate, ActivityScrollDelegate, customHeaderViewAction, LocationTableViewDelegate>
 
 @property (nonatomic, strong) ActivityTableSource *tableSource;
 @property (nonatomic, strong) CustomSearchBar *searchBar;
@@ -169,6 +169,7 @@
     else if (action == ActionOptionsC)
     {
         LocationTableViewController *vc = [[LocationTableViewController alloc] initWithStyle:UITableViewStylePlain];
+        vc.delegate = self;
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
         
         [self presentViewController:nav animated:YES completion:^(){
@@ -176,6 +177,17 @@
         }];
     }
     NSLog(@"Action : %i", (int)action);
+}
+
+#pragma mark - LocationViewDelegate
+- (BOOL)shouldSelectEnable
+{
+    return NO;
+}
+
+- (void)didSelectItems:(NSArray *)selectedItems
+{
+    //
 }
 
 - (customHeaderView*)tableviewHeader

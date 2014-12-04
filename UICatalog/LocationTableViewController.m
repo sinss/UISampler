@@ -10,8 +10,11 @@
 #import "DatabaseAdapter.h"
 
 @interface LocationTableViewController ()
-
+{
+    BOOL canSelected;
+}
 @property (nonatomic, strong) NSArray *spots;
+@property (nonatomic, strong) NSMutableArray *checedkValues;
 
 @end
 
@@ -19,6 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self createBarItem];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -31,9 +36,9 @@
 {
     [super viewDidAppear:animated];
     
+    __block LocationTableViewController *blockSelf = self;
     [[DatabaseAdapter shareInstance] getSpotsCompletion:^(BOOL success, NSArray *items){
-        self.spots = items;
-        
+        blockSelf.spots = items;
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
     }];
 }
@@ -43,17 +48,46 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void)dealloc
+{
+    _delegate = nil;
+}
+
+- (void)createBarItem
+{
+    UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithTitle:@"確定" style:UIBarButtonItemStyleDone target:self action:@selector(done:)];
+    
+    UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStyleDone target:self action:@selector(cancel:)];
+    
+    self.navigationItem.leftBarButtonItems = @[done];
+    self.navigationItem.rightBarButtonItems = @[cancel];
+}
+
+- (void)done:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        if ([self.delegate respondsToSelector:@selector(didSelectItems:)])
+        {
+            [self.delegate didSelectItems:[self getSelectedItems]];
+        }
+    }];
+}
+
+- (void)cancel:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
+
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
+
     return self.spots.count;
 }
 
@@ -66,12 +100,33 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cellIdentifier"];
     }
     
-    cell.textLabel.text = self.spots[indexPath.row];
-    // Configure the cell...
-    
+    SpotItem *item = self.spots[indexPath.row];
+    cell.textLabel.text = item.spot;
+    if (item.selected)
+    {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else
+    {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([self.delegate shouldSelectEnable])
+    {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        
+        SpotItem *item = self.spots[indexPath.row];
+        
+        item.selected = !item.selected;
+        
+        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -117,4 +172,16 @@
 }
 */
 
+- (NSArray*)getSelectedItems
+{
+    NSMutableArray *items = [NSMutableArray array];
+    for (SpotItem *item in _spots)
+    {
+        if (item.selected)
+        {
+            [items addObject:items];
+        }
+    }
+    return items;
+}
 @end

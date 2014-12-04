@@ -175,6 +175,7 @@
 		B305B1061A0286C600F21F95 /* NonARCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B305B1041A0286C600F21F95 /* NonARCViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B305B1071A0286C600F21F95 /* NonARCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B305B1051A0286C600F21F95 /* NonARCViewController.xib */; };
 		B305B10A1A028A6500F21F95 /* singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = B305B1091A028A6500F21F95 /* singleton.m */; };
+		B30D80B51A30447800F5DA32 /* SpotItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B30D80B41A30447800F5DA32 /* SpotItem.m */; };
 		B310EB8B1A1F96AF00129856 /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B310EB8A1A1F96AF00129856 /* UIPlaceHolderTextView.m */; };
 		B310EB8E1A1FA21C00129856 /* PKImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B310EB8D1A1FA21C00129856 /* PKImagePickerViewController.m */; };
 		B310EB901A1FA35000129856 /* PKImageBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B310EB8F1A1FA35000129856 /* PKImageBundle.bundle */; };
@@ -436,6 +437,8 @@
 		B305B1051A0286C600F21F95 /* NonARCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NonARCViewController.xib; sourceTree = "<group>"; };
 		B305B1081A028A6500F21F95 /* singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = singleton.h; sourceTree = "<group>"; };
 		B305B1091A028A6500F21F95 /* singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = singleton.m; sourceTree = "<group>"; };
+		B30D80B31A30447800F5DA32 /* SpotItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotItem.h; sourceTree = "<group>"; };
+		B30D80B41A30447800F5DA32 /* SpotItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotItem.m; sourceTree = "<group>"; };
 		B310EB891A1F96AF00129856 /* UIPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPlaceHolderTextView.h; sourceTree = "<group>"; };
 		B310EB8A1A1F96AF00129856 /* UIPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPlaceHolderTextView.m; sourceTree = "<group>"; };
 		B310EB8C1A1FA21C00129856 /* PKImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKImagePickerViewController.h; sourceTree = "<group>"; };
@@ -849,6 +852,8 @@
 				0F8D3F341A29B63700C2083A /* OpreationSample.m */,
 				0F8D3F361A29B85700C2083A /* ComplexityWork.h */,
 				0F8D3F371A29B85700C2083A /* ComplexityWork.m */,
+				B30D80B31A30447800F5DA32 /* SpotItem.h */,
+				B30D80B41A30447800F5DA32 /* SpotItem.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1215,6 +1220,7 @@
 				0F226C6B1A28C66D009EC47A /* DBHelper.m in Sources */,
 				0F226C511A28BFBC009EC47A /* AssetsCollectionViewLayout.m in Sources */,
 				0F226C631A28C636009EC47A /* FMDatabase.m in Sources */,
+				B30D80B51A30447800F5DA32 /* SpotItem.m in Sources */,
 				0F1208261A0E07590020EF9C /* ActionBViewController.m in Sources */,
 				0F226C4E1A28BFBC009EC47A /* NoAlbumsCell.m in Sources */,
 				B305B1061A0286C600F21F95 /* NonARCViewController.m in Sources */,

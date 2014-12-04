@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SpotItem.h"
 
 typedef void (^QueryFinish) (BOOL success, NSArray *result);
 

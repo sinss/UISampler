@@ -55,7 +55,15 @@
         }
         while ([rs next])
         {
-            [items addObject:[rs stringForColumn:@"spot"]];
+            @autoreleasepool {
+                SpotItem *item = [SpotItem new];
+                item.city = [rs stringForColumn:@"city"];
+                item.town = [rs stringForColumn:@"town"];
+                item.spot = [rs stringForColumn:@"spot"];
+                
+                [items addObject:item];
+            }
+            
             NSLog(@"%@", [rs stringForColumn:@"spot"]);
         }
         //callback
