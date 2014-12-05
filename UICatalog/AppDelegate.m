@@ -11,6 +11,7 @@
 
 #import "DBHelper.h"
 #import "OpreationSample.h"
+#import <GoogleMapsM4B/GoogleMaps.h>
 
 @interface AppDelegate ()
 
@@ -28,7 +29,7 @@
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"AAAAAAAA" object:@{}];
     
-    [[OpreationSample alloc] init];
+    [GMSServices provideAPIKey:@"AIzaSyC50XBJPHLkYR78RmG9bTC7O-0kBzLM4Bw"];
     
     return YES;
 }
