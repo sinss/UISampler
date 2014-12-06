@@ -13,7 +13,11 @@
 @property (nonatomic, strong) NSString *city;
 @property (nonatomic, strong) NSString *town;
 @property (nonatomic, strong) NSString *spot;
-
+@property (nonatomic, strong) NSString *address;
+@property (nonatomic, strong) NSNumber *latitude;
+@property (nonatomic, strong) NSNumber *longitude;
+@property (nonatomic, strong) NSNumber *counter;
+@property (nonatomic, strong) NSString *objectId;
 
 @property (nonatomic, assign) BOOL selected;
 

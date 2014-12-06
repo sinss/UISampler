@@ -8,8 +8,12 @@
 
 #import "SecondViewController.h"
 #import "Annotation.h"
+#import "SpotItem.h"
+#import <Parse/Parse.h>
 
 @interface SecondViewController () <MKMapViewDelegate>
+
+@property (nonatomic, strong) NSArray *hotSpots;
 
 @end
 
@@ -18,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupMapView];
+    
+    [self getHotSpots];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -92,9 +98,9 @@
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    //Annotation *addTheAnnotation = (Annotation *)view.annotation;
+    Annotation *addTheAnnotation = (Annotation *)view.annotation;
     
-    
+    [self processSpotClickWithIndex:addTheAnnotation.tag];
 }
 
 - (void)getHotSpots
@@ -102,17 +108,83 @@
     /*
      Get data from Parse
      */
+    PFQuery *query = [PFQuery queryWithClassName:@"HotSpots"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *items, NSError *error){
+        if (!error)
+        {
+            NSMutableArray *spots = [NSMutableArray array];
+            //表示查詢成功
+            for (PFObject *object in items)
+            {
+                @autoreleasepool
+                {
+                    SpotItem *item = [[SpotItem alloc] init];
+                    item.spot = object[@"Spot"];
+                    item.address = object[@"address"];
+                    item.latitude = object[@"latitude"];
+                    item.longitude = object[@"longitude"];
+                    item.counter = object[@"counter"];
+                    item.objectId = object.objectId;
+                    [spots addObject:item];
+                }
+                NSLog(@"spot:%@", object[@"Spot"]);
+                NSLog(@"address:%@", object[@"address"]);
+            }
+            self.hotSpots = [NSArray arrayWithArray:spots];
+            
+            [self addHotSpotsToMap];
+        }
+        else
+        {
+            //查詢失敗
+            NSLog(@"error : %@" ,error);
+        }
+    }];
+    //[query findObjectsInBackgroundWithTarget:self selector:@selector(findResult:error:)];
+}
+
+- (void)findResult:(NSArray*)items error:(NSError*)error
+{
+    
 }
 
 - (void)addHotSpotsToMap
 {
-    Annotation *anno = [[Annotation alloc] initWithCoordinate:[[CLLocation alloc] initWithLatitude:25.085f longitude:121.524f].coordinate];
-    anno.titie = [NSString stringWithFormat:@"Sample"];
-    anno.content = [NSString stringWithFormat:@"content"];
-    anno.tag = 0;
-    anno.pinType  = 0;
+    int counter = 0;
+    for (SpotItem *item in _hotSpots)
+    {
+        Annotation *anno = [[Annotation alloc] initWithCoordinate:[[CLLocation alloc] initWithLatitude:item.latitude.doubleValue longitude:item.longitude.doubleValue].coordinate];
+        anno.titie = item.spot;
+        anno.content = item.address;
+        anno.tag = counter;
+        anno.pinType  = 0;
+        
+        [self.mapView addAnnotation:anno];
+        
+        counter ++;
+    }
+}
+
+- (void)processSpotClickWithIndex:(NSInteger)index
+{
+    SpotItem *item = self.hotSpots[index];
     
-    [self.mapView addAnnotation:anno];
+    item.counter = [NSNumber numberWithInteger:(item.counter.integerValue + 1)];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"HotSpots"];
+    [query whereKey:@"objectId" equalTo:item.objectId];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *items, NSError *error){
+        
+        if (!error)
+        {
+            PFObject *object = items[0];
+            object[@"counter"] = item.counter;
+            
+            [object saveInBackground];
+        }
+    
+    }];
 }
 
 @end
