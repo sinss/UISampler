@@ -10,13 +10,32 @@
 
 @implementation customHeaderView
 
-/*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     // Drawing code
+    NSString *titleA = [self.datasource titleForButtonA];
+    NSString *titleB = [self.datasource titleForButtonB];
+    NSString *titleC = [self.datasource titleForButtonC];
+    if (titleA)
+    {
+        [self.buttonA setTitle:titleA forState:UIControlStateNormal];
+    }
+    if (titleB)
+    {
+        [self.buttonB setTitle:titleB forState:UIControlStateNormal];
+    }
+    if (titleC)
+    {
+        [self.buttonC setTitle:titleC forState:UIControlStateNormal];
+    }
 }
-*/
+
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+}
 
 - (void)ActionButtonPress:(UIButton*)sender
 {

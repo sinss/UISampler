@@ -12,6 +12,19 @@
 #import "DBHelper.h"
 #import "OpreationSample.h"
 #import <GoogleMapsM4B/GoogleMaps.h>
+#import <Parse/Parse.h>
+
+#ifdef DEVELOPMENT
+
+#define parseAppId @"X7DO3SAGlyTTlY7i0Vi5IVJSkiD5woWpVmRjhWvP"
+#define parseClientId @"WidStINW0xzh6NaEfAABVZKVg0XtbcVLmnlasy2Q"
+
+#else
+
+#define parseAppId @""
+#define parseClientId @""
+
+#endif
 
 @interface AppDelegate ()
 
@@ -30,6 +43,16 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"AAAAAAAA" object:@{}];
     
     [GMSServices provideAPIKey:@"AIzaSyC50XBJPHLkYR78RmG9bTC7O-0kBzLM4Bw"];
+    
+    [Parse setApplicationId:parseAppId clientKey:parseClientId];
+    
+    UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
+                                                    UIUserNotificationTypeBadge |
+                                                    UIUserNotificationTypeSound);
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
+                                                                             categories:nil];
+    [application registerUserNotificationSettings:settings];
+    [application registerForRemoteNotifications];
     
     return YES;
 }
@@ -55,6 +78,14 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    // Store the deviceToken in the current Installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
+}
+
 
 #pragma mark - Private Method
 - (void)createLocationManager

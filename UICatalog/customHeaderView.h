@@ -18,11 +18,18 @@ typedef NS_ENUM(NSInteger, ActionOptions)
 typedef void (^ActionOptionBlock) (ActionOptions option);
 
 @protocol customHeaderViewAction;
+@protocol customHeaderViewDataSource;
 
 @interface customHeaderView : UIView
 
 @property (nonatomic, copy) ActionOptionBlock block;
 @property (nonatomic, weak) id <customHeaderViewAction> delegate;
+@property (nonatomic, weak) id <customHeaderViewDataSource> datasource;
+
+
+@property (nonatomic, weak) IBOutlet UIButton *buttonA;
+@property (nonatomic, weak) IBOutlet UIButton *buttonB;
+@property (nonatomic, weak) IBOutlet UIButton *buttonC;
 
 - (IBAction)ActionButtonPress:(id)sender;
 
@@ -39,5 +46,14 @@ typedef void (^ActionOptionBlock) (ActionOptions option);
 @optional
 
 - (void)customHeader:(customHeaderView*)view didSelectAction:(ActionOptions)action;
+
+@end
+
+@protocol customHeaderViewDataSource <NSObject>
+
+@optional
+- (NSString*)titleForButtonA;
+- (NSString*)titleForButtonB;
+- (NSString*)titleForButtonC;
 
 @end

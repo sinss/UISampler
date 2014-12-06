@@ -16,7 +16,7 @@
 #import "LocationTableViewController.h"
 
 
-@interface ActivityViewController () <UIScrollViewDelegate, ActivityScrollDelegate, customHeaderViewAction, LocationTableViewDelegate>
+@interface ActivityViewController () <UIScrollViewDelegate, ActivityScrollDelegate, customHeaderViewAction, customHeaderViewDataSource, LocationTableViewDelegate>
 
 @property (nonatomic, strong) ActivityTableSource *tableSource;
 @property (nonatomic, strong) CustomSearchBar *searchBar;
@@ -144,6 +144,23 @@
     }
 }
 
+#pragma mark - customActionHeaderDataSource
+
+- (NSString*)titleForButtonA
+{
+    return [NSString stringWithFormat:@"ActionA"];
+}
+
+- (NSString*)titleForButtonB
+{
+    return [NSString stringWithFormat:@"ActionB"];
+}
+
+- (NSString*)titleForButtonC
+{
+    return [NSString stringWithFormat:@"ActionC"];
+}
+
 #pragma mark - customActionHeaderDelegate
 - (void)customHeader:(customHeaderView *)view didSelectAction:(ActionOptions)action
 {
@@ -182,7 +199,7 @@
 #pragma mark - LocationViewDelegate
 - (BOOL)shouldSelectEnable
 {
-    return NO;
+    return YES;
 }
 
 - (void)didSelectItems:(NSArray *)selectedItems
@@ -204,6 +221,7 @@
         _tableviewHeader.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 30);
         [_tableviewHeader setBlock:nil];
         _tableviewHeader.delegate = self;
+        _tableviewHeader.datasource = self;
     }
     return _tableviewHeader;
 }

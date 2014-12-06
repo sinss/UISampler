@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#ifdef DEBUG
+//debug
+#else
+//release
+#endif
+
 @protocol PKImagePickerViewControllerDelegate <NSObject>
 
 -(void)imageSelected:(UIImage*)img;
