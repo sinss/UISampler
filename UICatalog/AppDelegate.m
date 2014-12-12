@@ -107,6 +107,10 @@
     [_locmanager setDesiredAccuracy:kCLLocationAccuracyBest];
     
     [self startUpdatingLocation];
+    
+    [_locmanager startMonitoringForRegion:nil];
+    //[_locmanager startMonitoringVisits];
+    //[_locmanager startMonitoringSignificantLocationChanges];
     /*
      注意
      NSLocationAlwaysUsageDescription
@@ -144,5 +148,19 @@
     
 }
 
+/*
+ 如果App關閉了通知，收不到此訊息
+ */
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    CLRegion *region = notification.region;
+    if (region)
+    {
+        if ([region.identifier isEqualToString:@"XXX"])
+        {
+            
+        }
+    }
+}
 
 @end

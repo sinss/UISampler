@@ -432,6 +432,7 @@
 		B34C2BB11A32C1AE00ADA8D5 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B34C2BB01A32C1AE00ADA8D5 /* iAd.framework */; };
 		B34C2BB31A32C21800ADA8D5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B34C2BB21A32C21800ADA8D5 /* StoreKit.framework */; };
 		B34C2BB61A32C2CB00ADA8D5 /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B34C2BB51A32C2CB00ADA8D5 /* Annotation.m */; };
+		B34C2C071A3B34FA00ADA8D5 /* InAppPurchaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B34C2C061A3B34FA00ADA8D5 /* InAppPurchaseManager.m */; };
 		B35AB34819FA970B0063034C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B35AB34719FA970B0063034C /* main.m */; };
 		B35AB34B19FA970B0063034C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B35AB34A19FA970B0063034C /* AppDelegate.m */; };
 		B35AB34E19FA970B0063034C /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B35AB34D19FA970B0063034C /* FirstViewController.m */; };
@@ -734,6 +735,9 @@
 		B34C2BB21A32C21800ADA8D5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		B34C2BB41A32C2CB00ADA8D5 /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
 		B34C2BB51A32C2CB00ADA8D5 /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
+		B34C2C041A3B34DB00ADA8D5 /* InAppPurchaseDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppPurchaseDelegate.h; sourceTree = "<group>"; };
+		B34C2C051A3B34FA00ADA8D5 /* InAppPurchaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppPurchaseManager.h; sourceTree = "<group>"; };
+		B34C2C061A3B34FA00ADA8D5 /* InAppPurchaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppPurchaseManager.m; sourceTree = "<group>"; };
 		B35AB34219FA970B0063034C /* UICatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UICatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B35AB34619FA970B0063034C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B35AB34719FA970B0063034C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1175,6 +1179,7 @@
 		B305B1021A02869A00F21F95 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B34C2C031A3B34BF00ADA8D5 /* InAppPurchase */,
 				B305B1031A0286C600F21F95 /* NonARCViewController.h */,
 				B305B1041A0286C600F21F95 /* NonARCViewController.m */,
 				B305B1051A0286C600F21F95 /* NonARCViewController.xib */,
@@ -1213,6 +1218,16 @@
 				B310EB8A1A1F96AF00129856 /* UIPlaceHolderTextView.m */,
 			);
 			name = "custom control";
+			sourceTree = "<group>";
+		};
+		B34C2C031A3B34BF00ADA8D5 /* InAppPurchase */ = {
+			isa = PBXGroup;
+			children = (
+				B34C2C041A3B34DB00ADA8D5 /* InAppPurchaseDelegate.h */,
+				B34C2C051A3B34FA00ADA8D5 /* InAppPurchaseManager.h */,
+				B34C2C061A3B34FA00ADA8D5 /* InAppPurchaseManager.m */,
+			);
+			name = InAppPurchase;
 			sourceTree = "<group>";
 		};
 		B35AB33919FA970B0063034C = {
@@ -1831,6 +1846,7 @@
 				0F8D3F351A29B63700C2083A /* OpreationSample.m in Sources */,
 				B310EB8E1A1FA21C00129856 /* PKImagePickerViewController.m in Sources */,
 				B3DE84201A0FC130006A0857 /* ActionAHeader.m in Sources */,
+				B34C2C071A3B34FA00ADA8D5 /* InAppPurchaseManager.m in Sources */,
 				B35AB34B19FA970B0063034C /* AppDelegate.m in Sources */,
 				0F226C841A297F65009EC47A /* DummyAlbumsTableView.m in Sources */,
 				0F226C421A28BFBC009EC47A /* TSAssetsLoader.m in Sources */,

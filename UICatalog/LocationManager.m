@@ -8,6 +8,7 @@
 
 #import "LocationManager.h"
 
+#define regionIdentifier @"regionIdentifier"
 @implementation LocationManager
 
 + (LocationManager*)sharedInstance
@@ -86,6 +87,34 @@
     [_locmanager startUpdatingHeading];
     
     NSLog(@"(2) lat : %f, long : %f", _locmanager.location.coordinate.latitude, _locmanager.location.coordinate.longitude);
+    
+    
+    //精準度，愈精準愈耗電。
+    [_locmanager setDesiredAccuracy:kCLLocationAccuracyBest];
+    
+    [self startMonitoringRegions];
+    
+}
+
+- (CLCircularRegion*)getFirstRegion
+{
+    CLLocationCoordinate2D location;
+    /*
+     [[CLLocation alloc] initWithLatitude:25.085f longitude:121.524f];
+     */
+    location.latitude = 25.085f;
+    location.longitude = 121.524f;
+    
+    CLLocationDistance regionRadius = 80000.00;
+//    CLLocationAccuracy acc = 10.0;
+    CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:location radius:regionRadius identifier:regionIdentifier];
+
+    return region;
+}
+
+- (void)startMonitoringRegions
+{
+    [_locmanager startMonitoringForRegion:[self getFirstRegion]];
 }
 
 - (CLLocation*)getCurrentLocation
@@ -109,8 +138,37 @@
     return YES;
 }
 
+-(BOOL)CanDeviceSupportAppBackgroundRefresh
+{
+    // Override point for customization after application launch.
+    if ([[UIApplication sharedApplication] backgroundRefreshStatus] == UIBackgroundRefreshStatusAvailable)
+    {
+        NSLog(@"Background updates are available for the app.");
+        return YES;
+    }
+    else if([[UIApplication sharedApplication] backgroundRefreshStatus] == UIBackgroundRefreshStatusDenied)
+    {
+        NSLog(@"The user explicitly disabled background behavior for this app or for the whole system.");
+        return NO;
+    }
+    else if([[UIApplication sharedApplication] backgroundRefreshStatus] == UIBackgroundRefreshStatusRestricted)
+    {
+        NSLog(@"Background updates are unavailable and the user cannot enable them again. For example, this status can occur when parental controls are in effect for the current user.");
+        return NO;
+    }
+    return NO;
+}
 
 #pragma mark - LocationManagerDelegate
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    BOOL canUseLocationNotifications = (status == kCLAuthorizationStatusAuthorizedWhenInUse);
+    if (canUseLocationNotifications)
+    {
+        [self startMonitoringRegions];
+    }
+}
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     NSLog(@"(old) lat : %f, long : %f", oldLocation.coordinate.latitude, oldLocation.coordinate.longitude);
@@ -121,4 +179,38 @@
     
 }
 
+- (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region
+{
+    NSLog(@"start monitoring %@", region);
+}
+
+- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region
+{
+    NSLog(@"Enter");
+}
+
+- (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region
+{
+    NSLog(@"Exit");
+}
+
+- (void)locationManager:(CLLocationManager *)manager monitoringDidFailForRegion:(CLRegion *)region withError:(NSError *)error
+{
+    NSLog(@"monitoringDidFailForRegion - error: %@", [error localizedDescription]);
+}
+
+
+- (void)showNotificationAlert
+{
+    /*
+     註冊通知
+     */
+    UILocalNotification *locNotification = [[UILocalNotification alloc]
+                                            init];
+    locNotification.alertBody = @"您到達了ｘｘｘｘ!";
+    locNotification.regionTriggersOnce = YES;
+    locNotification.region = [self getFirstRegion];
+    [[UIApplication sharedApplication] scheduleLocalNotification:locNotification];
+    
+}
 @end

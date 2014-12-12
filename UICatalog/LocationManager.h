@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 #import <CoreLocation/CLLocationManagerDelegate.h>
+#import <UIKit/UIKit.h>
 
 @interface LocationManager : NSObject <CLLocationManagerDelegate>
 
@@ -25,6 +26,7 @@
 - (void)startUpdatingLocation;
 
 - (BOOL)locationServicesEnabled;
+- (BOOL)CanDeviceSupportAppBackgroundRefresh;
 
 //取得經緯度
 - (CLLocation*)getCurrentLocation;
