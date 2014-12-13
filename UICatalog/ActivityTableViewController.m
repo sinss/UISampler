@@ -7,11 +7,13 @@
 //
 
 #import "ActivityTableViewController.h"
+#import "WebserviceAdapter.h"
 
-@interface ActivityTableViewController ()
+@interface ActivityTableViewController () <WebserviceAdapterDelegate>
 
 @property (nonatomic, strong) NSArray *items;
 @property (nonatomic, strong) NSArray *checkState;
+
 
 @end
 
@@ -27,6 +29,18 @@
     [super viewDidLoad];
     [self createData];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    
+    WebserviceAdapter *service1 = [[WebserviceAdapter alloc] initWithUrl:[NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/18183877/(FX)(mediaoverlay)(%E8%91%A3%E7%A6%8F%E8%88%88)%E5%9C%8B%E8%AA%9E%E9%A6%96%E5%86%8A.epub"] param:@{}];
+    service1.tag = WebserviceTagService1;
+    service1.delegate = self;
+    [service1 startRequestWithPostMethod:@"GET"];
+    
+    WebserviceAdapter *service2 = [[WebserviceAdapter alloc] initWithUrl:[NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/18183877/iExamMobile.plist"] param:@{}];
+    service2.tag = WebserviceTagService2;
+    service2.delegate = self;
+    [service2 startRequestWithPostMethod:@"GET"];
+    
     //self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     /*
@@ -38,6 +52,33 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+#pragma mark - WebserviceAdapterDelegate
+- (void)adapter:(WebserviceAdapter *)adapter didSuccessWithRequestResult:(NSData *)data
+{
+    if (adapter.tag == WebserviceTagService1)
+    {
+        NSLog(@"service1 完成了");
+        [data writeToFile:@"cache/xxx.epub" atomically:YES];
+    }
+    else if (adapter.tag == WebserviceTagService2)
+    {
+        NSLog(@"service2 完成了");
+        [data writeToFile:@"cache/filename.plist" atomically:YES];
+    }
+}
+
+- (void)adapter:(WebserviceAdapter *)adapter didFailWithRequestResult:(NSData *)data
+{
+    if (adapter.tag == WebserviceTagService1)
+    {
+        NSLog(@"service1 失敗了");
+    }
+    else if (adapter.tag == WebserviceTagService2)
+    {
+        NSLog(@"service2 失敗了");
+    }
 }
 
 - (void)createNnavigationBar

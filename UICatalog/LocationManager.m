@@ -105,7 +105,7 @@
     location.latitude = 25.085f;
     location.longitude = 121.524f;
     
-    CLLocationDistance regionRadius = 80000.00;
+    CLLocationDistance regionRadius = 8000.00;
 //    CLLocationAccuracy acc = 10.0;
     CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:location radius:regionRadius identifier:regionIdentifier];
 
@@ -115,6 +115,8 @@
 - (void)startMonitoringRegions
 {
     [_locmanager startMonitoringForRegion:[self getFirstRegion]];
+    
+    [_locmanager startMonitoringSignificantLocationChanges];
 }
 
 - (CLLocation*)getCurrentLocation
@@ -181,12 +183,13 @@
 
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region
 {
-    NSLog(@"start monitoring %@", region);
+    NSLog(@"start monitoring %@", region.identifier);
 }
 
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region
 {
     NSLog(@"Enter");
+    [self showNotificationAlert];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region
@@ -208,8 +211,14 @@
     UILocalNotification *locNotification = [[UILocalNotification alloc]
                                             init];
     locNotification.alertBody = @"您到達了ｘｘｘｘ!";
+    //iOS7以前沒有CLRegion物件，必須使用自已定義的Idntifier識別
+    locNotification.userInfo = @{@"key":@"value", @"regionIdentifier":regionIdentifier};
     locNotification.regionTriggersOnce = YES;
-    locNotification.region = [self getFirstRegion];
+    if ([locNotification respondsToSelector:@selector(region)])
+    {
+        locNotification.region = [self getFirstRegion];
+    }
+    //註冊一個LocaNotification
     [[UIApplication sharedApplication] scheduleLocalNotification:locNotification];
     
 }

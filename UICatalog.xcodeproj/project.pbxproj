@@ -385,6 +385,8 @@
 		0F226C861A297F65009EC47A /* DummyAssetsCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C7E1A297F65009EC47A /* DummyAssetsCollectionView.m */; };
 		0F226C871A297F65009EC47A /* DummyAssetsImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C801A297F65009EC47A /* DummyAssetsImporter.m */; };
 		0F226C881A297F65009EC47A /* DummyNoAlbumsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F226C821A297F65009EC47A /* DummyNoAlbumsCell.m */; };
+		0F2BC26A1A3C23EC000354F7 /* WebserviceAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2BC2691A3C23EC000354F7 /* WebserviceAdapter.m */; };
+		0F2BC26B1A3C23EC000354F7 /* WebserviceAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2BC2691A3C23EC000354F7 /* WebserviceAdapter.m */; };
 		0F8D3F351A29B63700C2083A /* OpreationSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8D3F341A29B63700C2083A /* OpreationSample.m */; };
 		0F8D3F381A29B85700C2083A /* ComplexityWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8D3F371A29B85700C2083A /* ComplexityWork.m */; };
 		0FC9E68C1A2079570038A742 /* NSMutableDictionary+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC9E68B1A2079570038A742 /* NSMutableDictionary+extend.m */; };
@@ -667,6 +669,8 @@
 		0F226C801A297F65009EC47A /* DummyAssetsImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyAssetsImporter.m; sourceTree = "<group>"; };
 		0F226C811A297F65009EC47A /* DummyNoAlbumsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyNoAlbumsCell.h; sourceTree = "<group>"; };
 		0F226C821A297F65009EC47A /* DummyNoAlbumsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyNoAlbumsCell.m; sourceTree = "<group>"; };
+		0F2BC2681A3C23EC000354F7 /* WebserviceAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebserviceAdapter.h; sourceTree = "<group>"; };
+		0F2BC2691A3C23EC000354F7 /* WebserviceAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebserviceAdapter.m; sourceTree = "<group>"; };
 		0F8D3F331A29B63700C2083A /* OpreationSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpreationSample.h; sourceTree = "<group>"; };
 		0F8D3F341A29B63700C2083A /* OpreationSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpreationSample.m; sourceTree = "<group>"; };
 		0F8D3F361A29B85700C2083A /* ComplexityWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplexityWork.h; sourceTree = "<group>"; };
@@ -1207,6 +1211,8 @@
 				B30D80B41A30447800F5DA32 /* SpotItem.m */,
 				B34C2BB41A32C2CB00ADA8D5 /* Annotation.h */,
 				B34C2BB51A32C2CB00ADA8D5 /* Annotation.m */,
+				0F2BC2681A3C23EC000354F7 /* WebserviceAdapter.h */,
+				0F2BC2691A3C23EC000354F7 /* WebserviceAdapter.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1779,6 +1785,7 @@
 				0F055F5F1A32E18E003DEA14 /* TSAssetsLoader.m in Sources */,
 				0F055F601A32E18E003DEA14 /* SearchMarkCell.m in Sources */,
 				0F055F611A32E18E003DEA14 /* TSSizeComparator.m in Sources */,
+				0F2BC26B1A3C23EC000354F7 /* WebserviceAdapter.m in Sources */,
 				0F055F621A32E18E003DEA14 /* LocationTableViewController.m in Sources */,
 				0F055F631A32E18E003DEA14 /* ActivityTableViewController.m in Sources */,
 				0F055F641A32E18E003DEA14 /* TSBaseLoader.m in Sources */,
@@ -1834,6 +1841,7 @@
 				0F226C6E1A28C977009EC47A /* DatabaseAdapter.m in Sources */,
 				0F226C6B1A28C66D009EC47A /* DBHelper.m in Sources */,
 				0F226C511A28BFBC009EC47A /* AssetsCollectionViewLayout.m in Sources */,
+				0F2BC26A1A3C23EC000354F7 /* WebserviceAdapter.m in Sources */,
 				0F226C631A28C636009EC47A /* FMDatabase.m in Sources */,
 				B30D80B51A30447800F5DA32 /* SpotItem.m in Sources */,
 				0F1208261A0E07590020EF9C /* ActionBViewController.m in Sources */,
