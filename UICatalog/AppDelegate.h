@@ -16,19 +16,9 @@
  AIzaSyCd-1nBUCJWJ0PSWCeq8Y9F8kbqTj1pwq4
  */
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-/*
- 此裝置的Location
- */
-@property (strong, readonly) CLLocationManager *locmanager;
-
-- (void)stopUpdatingLocation;
-- (void)startUpdatingLocation;
-
-- (CLLocation*)getCurrentLocation;
 
 @end
 

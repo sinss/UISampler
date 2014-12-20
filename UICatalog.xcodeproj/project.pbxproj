@@ -1373,9 +1373,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0F055F361A32E18E003DEA14 /* UICatalog copy */ = {
+		0F055F361A32E18E003DEA14 /* UICatalog Purdhase */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0F0560131A32E18E003DEA14 /* Build configuration list for PBXNativeTarget "UICatalog copy" */;
+			buildConfigurationList = 0F0560131A32E18E003DEA14 /* Build configuration list for PBXNativeTarget "UICatalog Purdhase" */;
 			buildPhases = (
 				0F055F371A32E18E003DEA14 /* Sources */,
 				0F055F791A32E18E003DEA14 /* Frameworks */,
@@ -1385,7 +1385,7 @@
 			);
 			dependencies = (
 			);
-			name = "UICatalog copy";
+			name = "UICatalog Purdhase";
 			productName = UICatalog;
 			productReference = 0F0560161A32E18E003DEA14 /* UICatalog copy.app */;
 			productType = "com.apple.product-type.application";
@@ -1434,6 +1434,14 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = Perfectidea;
 				TargetAttributes = {
+					0F055F361A32E18E003DEA14 = {
+						DevelopmentTeam = U2S7TV3WH6;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
 					B35AB34119FA970B0063034C = {
 						CreatedOnToolsVersion = 6.0.1;
 						DevelopmentTeam = K69G335CY9;
@@ -1459,7 +1467,7 @@
 			targets = (
 				B35AB34119FA970B0063034C /* UICatalog */,
 				B35AB35D19FA970B0063034C /* UICatalogTests */,
-				0F055F361A32E18E003DEA14 /* UICatalog copy */,
+				0F055F361A32E18E003DEA14 /* UICatalog Purdhase */,
 			);
 		};
 /* End PBXProject section */
@@ -2128,7 +2136,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0F0560131A32E18E003DEA14 /* Build configuration list for PBXNativeTarget "UICatalog copy" */ = {
+		0F0560131A32E18E003DEA14 /* Build configuration list for PBXNativeTarget "UICatalog Purdhase" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0F0560141A32E18E003DEA14 /* Debug */,

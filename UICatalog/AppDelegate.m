@@ -46,16 +46,16 @@
     
     [Parse setApplicationId:parseAppId clientKey:parseClientId];
     
-//    UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
-//                                                    UIUserNotificationTypeBadge |
-//                                                    UIUserNotificationTypeSound);
-//    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
-//                                                                             categories:nil];
-//    [application registerUserNotificationSettings:settings];
-//    [application registerForRemoteNotifications];
+    UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
+                                                    UIUserNotificationTypeBadge |
+                                                    UIUserNotificationTypeSound);
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
+                                                                             categories:nil];
+    [application registerUserNotificationSettings:settings];
+    [application registerForRemoteNotifications];
     
     
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeSound];
+    //[[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeSound];
     
     return YES;
 }
@@ -93,64 +93,6 @@
     
     
     [currentInstallation saveInBackground];
-}
-
-
-#pragma mark - Private Method
-- (void)createLocationManager
-{
-    _locmanager = [[CLLocationManager alloc] init];
-    if ([self.locmanager respondsToSelector:@selector(requestAlwaysAuthorization)])
-    {
-        [self.locmanager requestAlwaysAuthorization];
-    }
-    [_locmanager setDelegate:self];
-    [_locmanager setDistanceFilter:1.0f];
-    [_locmanager setHeadingFilter:kCLHeadingFilterNone];
-    
-    //精準度，愈精準愈耗電。
-    [_locmanager setDesiredAccuracy:kCLLocationAccuracyBest];
-    
-    [self startUpdatingLocation];
-    
-    [_locmanager startMonitoringForRegion:nil];
-    //[_locmanager startMonitoringVisits];
-    //[_locmanager startMonitoringSignificantLocationChanges];
-    /*
-     注意
-     NSLocationAlwaysUsageDescription
-     NSLocationAlwaysUsageDescription
-     在Setting Info.plist裡面一定要加上這兩組Key才可以正常使用(iOS8)
-     */
-}
-
-- (void)stopUpdatingLocation
-{
-    [_locmanager stopUpdatingLocation];
-    [_locmanager stopUpdatingHeading];
-}
-
-- (void)startUpdatingLocation
-{
-    //開始定位
-    [_locmanager startUpdatingLocation];
-    
-    NSLog(@"(1) lat : %f, long : %f", _locmanager.location.coordinate.latitude, _locmanager.location.coordinate.longitude);
-    
-    [_locmanager startUpdatingHeading];
-    
-    NSLog(@"(2) lat : %f, long : %f", _locmanager.location.coordinate.latitude, _locmanager.location.coordinate.longitude);
-}
-
-#pragma mark - LocationManagerDelegate
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-{
-    NSLog(@"(old) lat : %f, long : %f", oldLocation.coordinate.latitude, oldLocation.coordinate.longitude);
-    NSLog(@"(new) lat : %f, long : %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
-}
-
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-    
 }
 
 /*
