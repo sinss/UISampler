@@ -13,8 +13,23 @@
 #define kInAppPurchaseSuccessNotification @"InAppPurchaseSuccessNotification.key"
 #define kInAppPurchaseFailNotification @"InAppPurchaseSuccessNotification.key"
 
-@interface InAppPurchaseManager : NSObject
+/*
+ Consumable
+  - 一次性購買內容
+ Non-Consumable
+  - 遊戲幣內購
+ Auto-Renewable Subscriptions
+  - 自動Review的項目(雜誌訂閱 - Newsstand)
+ Free Subscription
+  -  免費的購買項目
+ Non-Renewing Subscription
+  － 期間使用的內買項目(雜誌訂閱 - Newsstand)
+ */
+@interface InAppPurchaseManager : NSObject <SKProductsRequestDelegate, SKPaymentTransactionObserver>
 
+@property (nonatomic, strong) NSArray *productIds;
+@property (nonatomic, strong) SKProductsRequest *skRequest;
 
+- (void)loadStore;
 
 @end

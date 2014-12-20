@@ -444,6 +444,7 @@
 		B35AB35919FA970B0063034C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B35AB35719FA970B0063034C /* LaunchScreen.xib */; };
 		B35AB36519FA970B0063034C /* UICatalogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B35AB36419FA970B0063034C /* UICatalogTests.m */; };
 		B35AB37119FA9C020063034C /* ActivityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B35AB37019FA9C020063034C /* ActivityTableViewController.m */; };
+		B3C1CA5E1A453188003CFA24 /* InAppPurchaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B34C2C061A3B34FA00ADA8D5 /* InAppPurchaseManager.m */; };
 		B3DE84141A0DC249006A0857 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DE84131A0DC249006A0857 /* CoreGraphics.framework */; };
 		B3DE84161A0DC251006A0857 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DE84151A0DC251006A0857 /* UIKit.framework */; };
 		B3DE84181A0DC257006A0857 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3DE84171A0DC257006A0857 /* Foundation.framework */; };
@@ -1801,6 +1802,7 @@
 				0F055F661A32E18E003DEA14 /* FirstViewController.m in Sources */,
 				0F055F671A32E18E003DEA14 /* CustomInputAccessoryView.m in Sources */,
 				0F055F681A32E18E003DEA14 /* TSAssetsPickerController+Internals.m in Sources */,
+				B3C1CA5E1A453188003CFA24 /* InAppPurchaseManager.m in Sources */,
 				0F055F691A32E18E003DEA14 /* AssetsCollectionView.m in Sources */,
 				0F055F6A1A32E18E003DEA14 /* TSAssetsContainer.m in Sources */,
 				0F055F6B1A32E18E003DEA14 /* FMDatabasePool.m in Sources */,
@@ -1952,7 +1954,7 @@
 					"$(PROJECT_DIR)/External",
 				);
 				INFOPLIST_FILE = "UICatalog copy2-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "UICatalog copy";
@@ -1971,7 +1973,7 @@
 					"$(PROJECT_DIR)/External",
 				);
 				INFOPLIST_FILE = "UICatalog copy2-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "UICatalog copy";
